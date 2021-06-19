@@ -1,3 +1,151 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: antiquewhite;
+    background-color: rgb(255, 255, 255);
+    margin: 0px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.178);
+}
+
+.logo {
+    width: 150px;
+    padding-left: 150px;
+}
+
+.menueContainer {
+    position: absolute;
+    right: 130px;
+}
+
+.menue {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.menuepunkt a {
+    font-size: 16px;
+    color: #6d6d6d;
+    padding: 50px;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: 0.3s ease-out;
+}
+
+.menuepunkt:hover a {
+    color: black;
+    transition: 0.3s ease-in;
+}
+
+.ebenenContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+.ebene1 {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background-color: #eca900;
+}
+
+.ebene1Bild {
+    width: 50%;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 80px;
+}
+
+.ueberschrift {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+    color: rgb(233, 233, 233);
+}
+
+.textkoerper {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 35px;
+    font-size: 20px;
+    color: rgb(233, 233, 233);
+    width: 510px;
+    margin-top: -20px;
+}
+
+.buttonRezeptübersicht {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: rgb(233, 233, 233);
+    width: 200px;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.buttonRezeptübersicht {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: rgb(233, 233, 233);
+    width: 200px;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+}
+
+.buttonRezeptübersicht:hover {
+    background-color: rgb(238, 238, 238);
+    transition: 0.3s ease-in;
+}
+
+.ebeneRezepte {
+    background-color: rgb(252, 240, 210);
+    width: 80%;
+}
+
+.ebeneRezepte .ueberschrift {
+    text-align: left;
+    color: black;
+    margin-left: 30px;
+    margin-top: 80px;
 }
