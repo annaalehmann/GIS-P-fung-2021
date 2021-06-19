@@ -1,0 +1,69 @@
+body {
+    margin: 0px;
+    background-image: url(Bilder/loginBackground.jpg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: #eca900;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+}
+
+.logoContainer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 200px;
+}
+
+.loginContainer {
+    margin-top: 160px;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input {
+    width: 280px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#nutzername,
+#passwort {
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 20px;
+    width: 150px;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    background-color: #eca900;
+    border-color: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+
+button:hover {
+    background-color: #fcb911;
+    transition: 0.3s ease-in;
+}
