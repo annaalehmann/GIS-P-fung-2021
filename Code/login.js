@@ -2,12 +2,12 @@
 var pruefungsabgabe;
 (function (pruefungsabgabe) {
     /*Variablen Deklaration für den Login-BUtton*/
-    let buttonLogin = document.getElementById("login");
-    /*Beim klicken auf den Button wird die Funktione handleLogin durchgeführt*/
+    let buttonLogin = document.querySelector("button#login");
+    /*Beim klicken auf den Button wird die Funktion handleLogin durchgeführt*/
     buttonLogin.addEventListener("click", handleLogin);
     /*Variablen Deklaration für den Registrieren-BUtton*/
-    let buttonRegistrierung = document.getElementById("registrierung");
-    /**Beim klicken auf den Button wird die Funktione handleLogin durchgeführt**/
+    let buttonRegistrierung = document.querySelector("button#registrierung");
+    /**Beim klicken auf den Button wird die Funktion handleLogin durchgeführt**/
     buttonRegistrierung.addEventListener("click", handleRegistrierung);
     async function handleRegistrierung() {
         /*Zugriff auf die Formularwerte des Formulars "formular"*/
