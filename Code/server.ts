@@ -6,7 +6,7 @@ import * as Mongo from "mongodb";
 export namespace pruefungsabgabe {
 
     let url: string;
-    url = "mongodb+srv://test-user:<12345>@foodmood.bxjhf.mongodb.net/database_foodmood?retryWrites=true&w=majority";
+    url = "mongodb+srv://test-user:12345@foodmood.bxjhf.mongodb.net/database_foodmood?retryWrites=true&w=majority";
 
     let registrierungDaten: Mongo.Collection;
     let rezepteDaten: Mongo.Collection;
