@@ -1,18 +1,17 @@
 namespace pruefungsabgabe {
 
     /*Variablen Deklaration für den Login-BUtton*/
-    let buttonLogin: HTMLButtonElement = <HTMLButtonElement>document.getElementById("login")!;
+    let buttonLogin: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("login"));
     /*Beim klicken auf den Button wird die Funktione handleLogin durchgeführt*/
     buttonLogin.addEventListener("click", handleLogin);
 
     /*Variablen Deklaration für den Registrieren-BUtton*/
-    let buttonRegistrierung: HTMLButtonElement = <HTMLButtonElement>document.getElementById("registrierung")!;
+    let buttonRegistrierung: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("registrierung"));
     /**Beim klicken auf den Button wird die Funktione handleLogin durchgeführt**/
     buttonRegistrierung.addEventListener("click", handleRegistrierung);
 
- 
 
-    
+
     async function handleRegistrierung(): Promise<void> {
         /*Zugriff auf die Formularwerte des Formulars "formular"*/
         let formData: FormData = new FormData(document.forms[0]);
