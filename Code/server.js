@@ -7,8 +7,7 @@ const Mongo = require("mongodb");
 var pruefungsabgabe;
 (function (pruefungsabgabe) {
     let url;
-    /* url = "mongodb+srv://test-user:12345@foodmood.bxjhf.mongodb.net/database_foodmood?retryWrites=true&w=majority";*/
-    url = "http://localhost:8100";
+    url = "mongodb+srv://test-user:12345@foodmood.bxjhf.mongodb.net/database_foodmood?retryWrites=true&w=majority";
     let registrierungDaten;
     let rezepteDaten;
     console.log("Server wird gestartet");
