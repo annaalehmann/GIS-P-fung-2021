@@ -1,0 +1,21 @@
+{
+    "name": "gis2021",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {},
+    "devDependencies": {},
+    "scripts": {
+        "start": "node Code/server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/annaalehmann/GIS-Pruefung-2021.git"
+    },
+    "author": "Anna Lehmann",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/annaalehmann/GIS-Pruefung-2021/issues"
+    },
+    "homepage": "https://github.com/annaalehmann/GIS-Pruefung-2021#readme"
+}
