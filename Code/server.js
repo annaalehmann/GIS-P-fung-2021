@@ -35,6 +35,14 @@ var pruefungsabgabe;
             if (pathname == "/registrierung") {
                 registrierungDaten.insertOne(url.query);
             }
+            if (pathname == "/login") {
+                if (await registrierungDaten.findOne(url.query)) {
+                    response.write("true");
+                }
+                else {
+                    response.write("false");
+                }
+            }
             response.end();
         }
     }

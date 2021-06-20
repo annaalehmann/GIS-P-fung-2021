@@ -26,15 +26,18 @@ var pruefungsabgabe;
         /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/
         let query = new URLSearchParams(formData);
         /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url = "http://localhost:8100";
-        _url = _url + "/login" + "?" + query.toString();
+        let url = "http://localhost:8100";
+        url = url + "/login" + "?" + query.toString();
         /*await: Ausführung der Funktion kann unterbrochen und zu einem späteren Zeitpunkt fortgesetzt werden, fetch: an den Server Anfrage verschicken und auf Antwort warten */
-        let response = await fetch(_url);
+        let response = await fetch(url);
         let responseText = await response.text();
         console.log(responseText);
         if (responseText == "true") {
             localStorage.setItem("user", responseText);
             window.location.href = "index.html";
+        }
+        else {
+            window.alert("Du musst dich zuerst registrieren");
         }
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));

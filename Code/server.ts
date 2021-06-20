@@ -7,10 +7,10 @@ export namespace pruefungsabgabe {
 
     let url: string;
     url = "mongodb+srv://test-user:12345@foodmood.bxjhf.mongodb.net/database_foodmood?retryWrites=true&w=majority";
-    
+
     let registrierungDaten: Mongo.Collection;
     let rezepteDaten: Mongo.Collection;
-   
+
     console.log("Server wird gestartet");
     let port: number = Number(process.env.PORT);
     if (!port)
@@ -30,7 +30,7 @@ export namespace pruefungsabgabe {
 
         registrierungDaten = mongoClient.db("database_foodmood").collection("registrierung");
         rezepteDaten = mongoClient.db("database_foodmood").collection("rezepte");
-       
+
         console.log("Mit Datenbank verbunden");
     }
 
@@ -47,6 +47,17 @@ export namespace pruefungsabgabe {
 
             if (pathname == "/registrierung") {
                 registrierungDaten.insertOne(url.query);
+            }
+
+
+            if (pathname == "/login") {
+                if (await registrierungDaten.findOne(url.query)) {
+                    response.write("true");
+                }
+
+                else {
+                    response.write("false");
+                }
             }
             response.end();
         }
