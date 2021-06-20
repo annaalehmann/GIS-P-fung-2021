@@ -17,7 +17,6 @@ var pruefungsabgabe;
         let url = "https://gis-pruefung-2021.herokuapp.com/";
         url += "/registrierung" + "?" + query.toString();
         await fetch(url);
-        console.log("test");
     }
     /*async: Funktion als asynchrone Kommunikation deklariert, Promise: liefert Antwort vom Server, void: kein Wert? */
     async function handleLogin() {
@@ -33,11 +32,7 @@ var pruefungsabgabe;
         console.log(responseText);
         if (responseText == "true") {
             localStorage.setItem("user", responseText);
-            alert("Du hast dich erfolgreich angemeldet");
             window.location.href = "index.html";
-        }
-        else {
-            alert("Leider hast du noch keinen Account. Bitte registriere dich zuerst!");
         }
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));

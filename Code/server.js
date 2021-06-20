@@ -8,8 +8,8 @@ var pruefungsabgabe;
 (function (pruefungsabgabe) {
     let url;
     url = "mongodb+srv://test-user:<12345>@foodmood.bxjhf.mongodb.net/database_foodmood?retryWrites=true&w=majority";
-    let registrierungCollection;
-    let rezepteCollection;
+    let registrierungDaten;
+    let rezepteDaten;
     console.log("Starting server");
     let port = Number(process.env.PORT);
     if (!port)
@@ -21,8 +21,8 @@ var pruefungsabgabe;
         let options = { useNewUrlParser: true, useUnifiedTopology: true };
         let mongoClient = new Mongo.MongoClient(url, options);
         await mongoClient.connect();
-        registrierungCollection = mongoClient.db("database_foodmood").collection("registrierung");
-        rezepteCollection = mongoClient.db("database_foodmood").collection("rezepte");
+        registrierungDaten = mongoClient.db("database_foodmood").collection("registrierung");
+        rezepteDaten = mongoClient.db("database_foodmood").collection("rezepte");
     }
     connectDatabase();
     async function handleRequest(_request, _response) {
@@ -32,7 +32,7 @@ var pruefungsabgabe;
             let url = Url.parse(_request.url, true);
             let pathname = url.pathname;
             if (pathname == "/registrierung") {
-                registrierungCollection.insertOne(url.query);
+                registrierungDaten.insertOne(url.query);
             }
             _response.end();
         }

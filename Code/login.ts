@@ -22,8 +22,6 @@ namespace pruefungsabgabe {
         let url: string = "https://gis-pruefung-2021.herokuapp.com/";
         url += "/registrierung" + "?" + query.toString();
         await fetch(url);
-
-        console.log("test");
     }
 
 
@@ -46,12 +44,7 @@ namespace pruefungsabgabe {
 
         if (responseText == "true") {
             localStorage.setItem("user", responseText);
-            alert("Du hast dich erfolgreich angemeldet");
             window.location.href = "index.html";
-        }
-
-        else {
-            alert("Leider hast du noch keinen Account. Bitte registriere dich zuerst!");
         }
 
     }
