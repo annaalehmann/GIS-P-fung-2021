@@ -10,7 +10,7 @@ var pruefungsabgabe;
     url = "mongodb+srv://test-user:<12345>@foodmood.bxjhf.mongodb.net/database_foodmood?retryWrites=true&w=majority";
     let registrierungDaten;
     let rezepteDaten;
-    console.log("Starting server");
+    console.log("Server wird gestartet");
     let port = Number(process.env.PORT);
     if (!port)
         port = 8100;

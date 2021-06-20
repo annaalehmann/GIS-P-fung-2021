@@ -11,7 +11,6 @@ namespace pruefungsabgabe {
     buttonRegistrierung.addEventListener("click", handleRegistrierung);
 
 
-
     async function handleRegistrierung(): Promise<void> {
         /*Zugriff auf die Formularwerte des Formulars "formular"*/
         let formData: FormData = new FormData(document.forms[0]);

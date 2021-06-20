@@ -10,8 +10,8 @@ export namespace pruefungsabgabe {
 
     let registrierungDaten: Mongo.Collection;
     let rezepteDaten: Mongo.Collection;
-    console.log("Starting server");
-
+   
+    console.log("Server wird gestartet");
     let port: number = Number(process.env.PORT);
     if (!port)
         port = 8100;
@@ -30,8 +30,10 @@ export namespace pruefungsabgabe {
 
         registrierungDaten = mongoClient.db("database_foodmood").collection("registrierung");
         rezepteDaten = mongoClient.db("database_foodmood").collection("rezepte");
+       
         console.log("Mit Datenbank verbunden");
     }
+
 
     async function handleRequest(request: Http.IncomingMessage, response: Http.ServerResponse): Promise<void> {
 
