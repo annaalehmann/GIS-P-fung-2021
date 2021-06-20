@@ -48,7 +48,6 @@ export namespace pruefungsabgabe {
             if (pathname == "/registrierung") {
                 registrierungDaten.insertOne(url.query);
             }
-
             response.end();
         }
     }
