@@ -17,6 +17,7 @@ var pruefungsabgabe;
     let server = Http.createServer();
     server.addListener("request", handleRequest);
     server.listen(port);
+    connectDatabase();
     async function connectDatabase() {
         let options = { useNewUrlParser: true, useUnifiedTopology: true };
         let mongoClient = new Mongo.MongoClient(url, options);
@@ -24,7 +25,6 @@ var pruefungsabgabe;
         registrierungDaten = mongoClient.db("database_foodmood").collection("registrierung");
         rezepteDaten = mongoClient.db("database_foodmood").collection("rezepte");
     }
-    connectDatabase();
     async function handleRequest(_request, _response) {
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");

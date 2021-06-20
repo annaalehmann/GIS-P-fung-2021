@@ -21,6 +21,7 @@ export namespace pruefungsabgabe {
     server.addListener("request", handleRequest);
     server.listen(port);
 
+    connectDatabase();
 
     async function connectDatabase(): Promise<void> {
         let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
@@ -30,9 +31,6 @@ export namespace pruefungsabgabe {
         registrierungDaten = mongoClient.db("database_foodmood").collection("registrierung");
         rezepteDaten = mongoClient.db("database_foodmood").collection("rezepte");
     }
-
-    connectDatabase();
-
 
     async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
 
@@ -50,6 +48,5 @@ export namespace pruefungsabgabe {
 
             _response.end();
         }
-
     }
 }
