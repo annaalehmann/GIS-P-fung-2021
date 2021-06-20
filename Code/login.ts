@@ -31,7 +31,7 @@ namespace pruefungsabgabe {
     async function handleLogin(): Promise<void> {
 
         /*Zugriff auf die Formularwerte des Formulars "formular"*/
-        let formData: FormData = new FormData(formular);
+        let formData: FormData = new FormData(document.forms[0]);
 
         /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/
         let query: URLSearchParams = new URLSearchParams(<any>formData);
