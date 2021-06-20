@@ -1,5 +1,5 @@
+node_modules
 node_modules/@types/node/assert.d.ts
-Code/server.ts
 node_modules/@types/node/async_hooks.d.ts
 node_modules/@types/node/path.d.ts
 node_modules/@types/node/perf_hooks.d.ts
