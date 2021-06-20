@@ -24,17 +24,18 @@ var pruefungsabgabe;
         await mongoClient.connect();
         registrierungDaten = mongoClient.db("database_foodmood").collection("registrierung");
         rezepteDaten = mongoClient.db("database_foodmood").collection("rezepte");
+        console.log("Mit Datenbank verbunden");
     }
-    async function handleRequest(_request, _response) {
-        _response.setHeader("content-type", "text/html; charset=utf-8");
-        _response.setHeader("Access-Control-Allow-Origin", "*");
-        if (_request.url) {
-            let url = Url.parse(_request.url, true);
+    async function handleRequest(request, response) {
+        response.setHeader("content-type", "text/html; charset=utf-8");
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        if (request.url) {
+            let url = Url.parse(request.url, true);
             let pathname = url.pathname;
             if (pathname == "/registrierung") {
                 registrierungDaten.insertOne(url.query);
             }
-            _response.end();
+            response.end();
         }
     }
 })(pruefungsabgabe = exports.pruefungsabgabe || (exports.pruefungsabgabe = {}));
