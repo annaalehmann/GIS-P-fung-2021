@@ -2,7 +2,7 @@ body {
     margin: 0px;
     background-image: url(Bilder/background.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: top center;
 }
 

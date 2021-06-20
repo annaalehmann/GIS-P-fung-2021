@@ -18,7 +18,7 @@ namespace pruefungsabgabe {
 
         /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        let url: string = "https://gis-pruefung-2021.herokuapp.com/";
+        let url: string = "https://gis-pruefung-2021.herokuapp.com";
         url += "/registrierung" + "?" + query.toString();
         await fetch(url);
     }
@@ -32,7 +32,7 @@ namespace pruefungsabgabe {
 
         /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        let _url: string = "https://gis-pruefung-2021.herokuapp.com/";
+        let _url: string = "https://gis-pruefung-2021.herokuapp.com";
         _url = _url + "/login" + "?" + query.toString();
 
         /*await: Ausführung der Funktion kann unterbrochen und zu einem späteren Zeitpunkt fortgesetzt werden, fetch: an den Server Anfrage verschicken und auf Antwort warten */
