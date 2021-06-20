@@ -2,12 +2,12 @@ namespace pruefungsabgabe {
 
     /*Variablen Deklaration für den Login-BUtton*/
     let buttonLogin: HTMLButtonElement = document.querySelector("button#login");
-    /*Beim klicken auf den Button wird die Funktione handleLogin durchgeführt*/
+    /*Beim klicken auf den Button wird die Funktion handleLogin durchgeführt*/
     buttonLogin.addEventListener("click", handleLogin);
 
     /*Variablen Deklaration für den Registrieren-BUtton*/
     let buttonRegistrierung: HTMLButtonElement = document.querySelector("button#registrierung");
-    /**Beim klicken auf den Button wird die Funktione handleLogin durchgeführt**/
+    /**Beim klicken auf den Button wird die Funktion handleLogin durchgeführt**/
     buttonRegistrierung.addEventListener("click", handleRegistrierung);
 
 
