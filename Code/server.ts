@@ -6,6 +6,6 @@ import * as Mongo from "mongodb";
 export namespace pruefungsabgabe {
 
     let datenUrl: string;
-    datenUrl = "mongodb+srv://annaalehmann:hallo12345@gis2020.pgckc.mongodb.net/Test?retryWrites=true&w=majority";
+    datenUrl = "mongodb+srv://test-user:<12345>@foodmood.bxjhf.mongodb.net/database_foodmood?retryWrites=true&w=majority";
     
 }
