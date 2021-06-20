@@ -10,7 +10,6 @@ export namespace pruefungsabgabe {
 
     let registrierungCollection: Mongo.Collection;
     let rezepteCollection: Mongo.Collection;
-
     console.log("Starting server");
 
     let port: number = Number(process.env.PORT);
