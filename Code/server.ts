@@ -30,23 +30,24 @@ export namespace pruefungsabgabe {
 
         registrierungDaten = mongoClient.db("database_foodmood").collection("registrierung");
         rezepteDaten = mongoClient.db("database_foodmood").collection("rezepte");
+        console.log("Mit Datenbank verbunden");
     }
 
-    async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
+    async function handleRequest(request: Http.IncomingMessage, response: Http.ServerResponse): Promise<void> {
 
-        _response.setHeader("content-type", "text/html; charset=utf-8");
-        _response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("content-type", "text/html; charset=utf-8");
+        response.setHeader("Access-Control-Allow-Origin", "*");
 
 
-        if (_request.url) {
-            let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
+        if (request.url) {
+            let url: Url.UrlWithParsedQuery = Url.parse(request.url, true);
             let pathname: String | null = url.pathname;
 
             if (pathname == "/registrierung") {
                 registrierungDaten.insertOne(url.query);
             }
 
-            _response.end();
+            response.end();
         }
     }
 }
