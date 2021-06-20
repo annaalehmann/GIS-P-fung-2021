@@ -22,7 +22,7 @@ var pruefungsabgabe;
     /*async: Funktion als asynchrone Kommunikation deklariert, Promise: liefert Antwort vom Server, void: kein Wert? */
     async function handleLogin() {
         /*Zugriff auf die Formularwerte des Formulars "formular"*/
-        let formData = new FormData(formular);
+        let formData = new FormData(document.forms[0]);
         /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/
         let query = new URLSearchParams(formData);
         let _url = "https://gis-pruefung-2021.herokuapp.com/";
