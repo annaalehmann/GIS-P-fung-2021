@@ -42,12 +42,19 @@ namespace pruefungsabgabe {
         console.log(responseText);
 
         if (responseText == "true") {
-            localStorage.setItem("user", responseText);
+            let nutzername: string = <string>formData.get("nutzername");
+            let passwort: string = <string>formData.get("passwort");
+            
+            localStorage.setItem("nutzername", nutzername);
+            localStorage.setItem("passwort", passwort);
+            
             window.location.href = "index.html";
+            console.log("Anmeldung erfolgreich");
         }
 
         else {
             window.alert("Du musst dich zuerst registrieren");
+            console.log("Anmeldung nicht erfolgreich");
         }
 
     }

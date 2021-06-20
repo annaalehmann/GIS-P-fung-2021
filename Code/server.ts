@@ -53,6 +53,7 @@ export namespace pruefungsabgabe {
             if (pathname == "/login") {
                 if (await registrierungDaten.findOne(url.query)) {
                     response.write("true");
+                    console.log("Login erfolgreich");
                 }
 
                 else {

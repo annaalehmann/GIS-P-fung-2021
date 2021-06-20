@@ -33,11 +33,16 @@ var pruefungsabgabe;
         let responseText = await response.text();
         console.log(responseText);
         if (responseText == "true") {
-            localStorage.setItem("user", responseText);
+            let nutzername = formData.get("nutzername");
+            let passwort = formData.get("passwort");
+            localStorage.setItem("nutzername", nutzername);
+            localStorage.setItem("passwort", passwort);
             window.location.href = "index.html";
+            console.log("Anmeldung erfolgreich");
         }
         else {
             window.alert("Du musst dich zuerst registrieren");
+            console.log("Anmeldung nicht erfolgreich");
         }
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
