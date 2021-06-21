@@ -15,8 +15,8 @@ var pruefungsabgabe;
         let formData = new FormData(document.forms[0]);
         /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/
         let query = new URLSearchParams(formData);
-        let url = "https://gis-pruefung-2021.herokuapp.com";
-        /* let _url: string = "http://localhost:8100";*/
+        /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
+        let _url = "http://localhost:8100";
         _url += "/registrierung" + "?" + query.toString();
         let response = await fetch(_url);
         let responseText = await response.text();
@@ -35,8 +35,8 @@ var pruefungsabgabe;
         let formData = new FormData(document.forms[0]);
         /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/
         let query = new URLSearchParams(formData);
-        let _url = "https://gis-pruefung-2021.herokuapp.com";
-        /*let _url: string = "http://localhost:8100";*/
+        /*let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
+        let _url = "http://localhost:8100";
         _url = _url + "/login" + "?" + query.toString();
         /*await: Ausführung der Funktion kann unterbrochen und zu einem späteren Zeitpunkt fortgesetzt werden, fetch: an den Server Anfrage verschicken und auf Antwort warten */
         console.log(_url);
