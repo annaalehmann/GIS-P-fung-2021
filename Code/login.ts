@@ -27,12 +27,11 @@ namespace pruefungsabgabe {
         let responseText: string = await response.text();
  
         if (responseText == "true") {
-            console.log("Registrierung erfolreich!");
             window.alert("Du hast dich erfolgreich registriert.");
         }
 
         else {
-           console.log("Diesen Account gibt es bereits.");
+           window.alert("Diesen Account gibt es bereits.");
         }
     }
 
