@@ -15,8 +15,8 @@ var pruefungsabgabe;
         let formData = new FormData(document.forms[0]);
         /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/
         let query = new URLSearchParams(formData);
-        /*let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url = "http://localhost:8100";
+        let url = "https://gis-pruefung-2021.herokuapp.com";
+        /* let _url: string = "http://localhost:8100";*/
         _url += "/registrierung" + "?" + query.toString();
         let response = await fetch(_url);
         let responseText = await response.text();
@@ -35,17 +35,19 @@ var pruefungsabgabe;
         let formData = new FormData(document.forms[0]);
         /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/
         let query = new URLSearchParams(formData);
-        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let url = "http://localhost:8100";
-        url = url + "/login" + "?" + query.toString();
+        let _url = "https://gis-pruefung-2021.herokuapp.com";
+        /*let _url: string = "http://localhost:8100";*/
+        _url = _url + "/login" + "?" + query.toString();
         /*await: Ausführung der Funktion kann unterbrochen und zu einem späteren Zeitpunkt fortgesetzt werden, fetch: an den Server Anfrage verschicken und auf Antwort warten */
-        let response = await fetch(url);
+        console.log(_url);
+        let response = await fetch(_url);
+        console.log(response);
         let responseText = await response.text();
-        console.log("Vor der If-Anweisung");
+        console.log("test3");
         if (responseText == "true") {
             console.log("In der If-Answeisung");
             window.location.href = "index.html";
-            window.alert("DU hast dich erfolgreich eingeloggt");
+            window.alert("Du hast dich erfolgreich eingeloggt");
         }
         else {
             window.alert("Fehler beim Login. Versuche es erneut.");
