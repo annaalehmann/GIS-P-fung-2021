@@ -44,6 +44,7 @@ namespace pruefungsabgabe {
 
        
         if (responseText == "true") {
+
             window.location.href = "index.html";
         }
 
