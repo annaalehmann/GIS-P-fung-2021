@@ -17,7 +17,7 @@ var pruefungsabgabe;
         /*let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url = "http://localhost:8100";
         _url += "/registrierung" + "?" + query.toString();
-        let response = await fetch(url);
+        let response = await fetch(_url);
         let responseText = await response.text();
         console.log("ResponseText: " + responseText);
         if (responseText == "true") {

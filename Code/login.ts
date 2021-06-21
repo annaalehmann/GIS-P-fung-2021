@@ -21,7 +21,7 @@ namespace pruefungsabgabe {
         let _url: string = "http://localhost:8100";
         _url += "/registrierung" + "?" + query.toString();
 
-        let response: Response = await fetch(url);
+        let response: Response = await fetch(_url);
         let responseText: string = await response.text();
 
         console.log("ResponseText: " + responseText);
