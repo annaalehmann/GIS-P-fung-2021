@@ -35,6 +35,9 @@ namespace pruefungsabgabe {
             let zubereitung: HTMLElement = document.createElement("p");
             zubereitung.innerHTML = "Zubereitung:" + rezeptArray[i].zubereitung;
             div.appendChild(zubereitung);
+
+           
         }
+
     }
 }
