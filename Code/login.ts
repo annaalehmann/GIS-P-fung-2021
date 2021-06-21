@@ -1,12 +1,12 @@
 namespace pruefungsabgabe {
 
     /*Variablen Deklaration für den Login-BUtton*/
-    let buttonLogin: HTMLButtonElement = document.querySelector("button#login");
+    let buttonLogin: HTMLButtonElement = <HTMLButtonElement>document.getElementById("login");
     /*Beim klicken auf den Button wird die Funktion handleLogin durchgeführt*/
     buttonLogin.addEventListener("click", handleLogin);
 
     /*Variablen Deklaration für den Registrieren-BUtton*/
-    let buttonRegistrierung: HTMLButtonElement = document.querySelector("button#registrierung");
+    let buttonRegistrierung: HTMLButtonElement = <HTMLButtonElement>document.getElementById("registrierung");
     /**Beim klicken auf den Button wird die Funktion handleLogin durchgeführt**/
     buttonRegistrierung.addEventListener("click", handleRegistrierung);
 
@@ -35,6 +35,8 @@ namespace pruefungsabgabe {
         }
     }
 
+    console.log("Vor handleLogin");
+
     /*async: Funktion als asynchrone Kommunikation deklariert, Promise: liefert Antwort vom Server, void: kein Wert? */
     async function handleLogin(): Promise<void> {
 
@@ -52,7 +54,10 @@ namespace pruefungsabgabe {
         let response: Response = await fetch(url);
         let responseText: string = await response.text();
        
+        console.log("Vor der If-Anweisung");
+
         if (responseText == "true") {
+            console.log("In der If-Answeisung");
             window.location.href = "index.html";
             window.alert("DU hast dich erfolgreich eingeloggt");
         }

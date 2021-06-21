@@ -2,11 +2,11 @@
 var pruefungsabgabe;
 (function (pruefungsabgabe) {
     /*Variablen Deklaration für den Login-BUtton*/
-    let buttonLogin = document.querySelector("button#login");
+    let buttonLogin = document.getElementById("login");
     /*Beim klicken auf den Button wird die Funktion handleLogin durchgeführt*/
     buttonLogin.addEventListener("click", handleLogin);
     /*Variablen Deklaration für den Registrieren-BUtton*/
-    let buttonRegistrierung = document.querySelector("button#registrierung");
+    let buttonRegistrierung = document.getElementById("registrierung");
     /**Beim klicken auf den Button wird die Funktion handleLogin durchgeführt**/
     buttonRegistrierung.addEventListener("click", handleRegistrierung);
     async function handleRegistrierung() {
@@ -27,6 +27,7 @@ var pruefungsabgabe;
             window.alert("Registrierung fehlgeschlagen. Wohlmöglich gibt es diesen Account schon.");
         }
     }
+    console.log("Vor handleLogin");
     /*async: Funktion als asynchrone Kommunikation deklariert, Promise: liefert Antwort vom Server, void: kein Wert? */
     async function handleLogin() {
         console.log("handleLogin start");
@@ -40,7 +41,9 @@ var pruefungsabgabe;
         /*await: Ausführung der Funktion kann unterbrochen und zu einem späteren Zeitpunkt fortgesetzt werden, fetch: an den Server Anfrage verschicken und auf Antwort warten */
         let response = await fetch(url);
         let responseText = await response.text();
+        console.log("Vor der If-Anweisung");
         if (responseText == "true") {
+            console.log("In der If-Answeisung");
             window.location.href = "index.html";
             window.alert("DU hast dich erfolgreich eingeloggt");
         }
