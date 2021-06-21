@@ -24,7 +24,7 @@ var pruefungsabgabe;
             window.alert("Du hast dich erfolgreich registriert.");
         }
         else {
-            window.alert("Diesen Account gibt es bereits.");
+            window.alert("Registrierung fehlgeschlagen. Wohlmöglich gibt es diesen Account schon.");
         }
     }
     /*async: Funktion als asynchrone Kommunikation deklariert, Promise: liefert Antwort vom Server, void: kein Wert? */

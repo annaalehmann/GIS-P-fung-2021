@@ -31,7 +31,7 @@ namespace pruefungsabgabe {
         }
 
         else {
-           window.alert("Diesen Account gibt es bereits.");
+           window.alert("Registrierung fehlgeschlagen. Wohlmöglich gibt es diesen Account schon.");
         }
     }
 
