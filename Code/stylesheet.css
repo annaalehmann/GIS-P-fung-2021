@@ -24,6 +24,29 @@ header {
     padding-left: 150px;
 }
 
+.ueberschrift {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+    color: rgb(233, 233, 233);
+}
+
+.textkoerper {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 35px;
+    font-size: 20px;
+    color: rgb(233, 233, 233);
+    width: 510px;
+    margin-top: -20px;
+}
+
+.unterueberschrift {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    color: white;
+    margin-left: 5px;
+    margin-top: 40px;
+}
+
 .menueContainer {
     position: absolute;
     right: 130px;
@@ -91,21 +114,6 @@ a {
     margin-top: 80px;
 }
 
-.ueberschrift {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 50px;
-    color: rgb(233, 233, 233);
-}
-
-.textkoerper {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    line-height: 35px;
-    font-size: 20px;
-    color: rgb(233, 233, 233);
-    width: 510px;
-    margin-top: -20px;
-}
-
 .buttonRezeptübersicht {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 16px;
@@ -158,6 +166,7 @@ a {
 
 .ebeneRezepte .ueberschrift {
     text-align: left;
+    width: 45%;
 }
 
 #rezept {
