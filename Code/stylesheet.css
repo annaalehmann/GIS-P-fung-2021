@@ -138,13 +138,41 @@ a {
     transition: 0.3s ease-in;
 }
 
+.ebeneContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+}
+
 .ebeneRezepte {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
     width: 80%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #eca900;
 }
 
 .ebeneRezepte .ueberschrift {
     text-align: left;
-    color: black;
-    margin-left: 30px;
-    margin-top: 80px;
+}
+
+#rezept {
+    display: flex;
+    flex-direction: row;
+}
+
+#zutatenliste {
+    width: 200px;
+}
+
+.zutaten {
+    margin: 5px;
+}
+
+#zutatenanweisung {
+    margin-top: 5px;
 }

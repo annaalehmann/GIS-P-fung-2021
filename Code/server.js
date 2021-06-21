@@ -54,9 +54,7 @@ var pruefungsabgabe;
                     console.log("Keine Login-Daten vorhanden");
                 }
             }
-            console.log("Server Ende");
             response.end();
-            console.log("Server Ende 2");
         }
     }
 })(pruefungsabgabe = exports.pruefungsabgabe || (exports.pruefungsabgabe = {}));

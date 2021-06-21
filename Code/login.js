@@ -41,7 +41,6 @@ var pruefungsabgabe;
         /*await: Ausführung der Funktion kann unterbrochen und zu einem späteren Zeitpunkt fortgesetzt werden, fetch: an den Server Anfrage verschicken und auf Antwort warten */
         console.log(_url);
         let response = await fetch(_url);
-        console.log(response);
         let responseText = await response.text();
         console.log("test3");
         if (responseText == "true") {

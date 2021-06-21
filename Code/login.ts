@@ -55,12 +55,13 @@ namespace pruefungsabgabe {
 
         console.log(_url);
         let response: Response = await fetch(_url);
-        console.log(response);
         let responseText: string = await response.text();
         console.log("test3");
 
         if (responseText == "true") {
+            
             console.log("In der If-Answeisung");
+            
             window.location.href = "index.html";
             window.alert("Du hast dich erfolgreich eingeloggt");
         }
