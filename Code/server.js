@@ -32,16 +32,18 @@ var pruefungsabgabe;
         if (request.url) {
             let url = Url.parse(request.url, true);
             let pathname = url.pathname;
+            console.log(pathname);
             if (pathname == "/registrierung") {
                 registrierungDaten.insertOne(url.query);
             }
             if (pathname == "/login") {
-                if (await registrierungDaten.findOne(url.query)) {
+                if (await registrierungDaten.findOne(url.query)) { //Query auslesen
                     response.write("true");
-                    console.log("Login erfolgreich");
+                    console.log("Login-Daten vorhanden, login durchführen");
                 }
                 else {
                     response.write("false");
+                    console.log("Keine Login-Daten vorhanden");
                 }
             }
             response.end();

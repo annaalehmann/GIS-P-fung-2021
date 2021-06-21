@@ -45,19 +45,23 @@ export namespace pruefungsabgabe {
             let url: Url.UrlWithParsedQuery = Url.parse(request.url, true);
             let pathname: String | null = url.pathname;
 
+            console.log(pathname);
+
             if (pathname == "/registrierung") {
                 registrierungDaten.insertOne(url.query);
             }
 
 
             if (pathname == "/login") {
-                if (await registrierungDaten.findOne(url.query)) {
-                    response.write("true");
-                    console.log("Login erfolgreich");
+          
+                if (await registrierungDaten.findOne(url.query)) {    //Query auslesen
+                  response.write("true");
+                  console.log("Login-Daten vorhanden, login durchführen");
                 }
-
+      
                 else {
-                    response.write("false");
+                  response.write("false");
+                  console.log("Keine Login-Daten vorhanden");
                 }
             }
             response.end();

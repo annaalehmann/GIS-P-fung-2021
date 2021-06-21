@@ -31,18 +31,12 @@ var pruefungsabgabe;
         /*await: Ausführung der Funktion kann unterbrochen und zu einem späteren Zeitpunkt fortgesetzt werden, fetch: an den Server Anfrage verschicken und auf Antwort warten */
         let response = await fetch(url);
         let responseText = await response.text();
-        console.log(responseText);
+        console.log("ResponseText: " + responseText);
         if (responseText == "true") {
-            let nutzername = formData.get("nutzername");
-            let passwort = formData.get("passwort");
-            localStorage.setItem("nutzername", nutzername);
-            localStorage.setItem("passwort", passwort);
             window.location.href = "index.html";
-            console.log("Anmeldung erfolgreich");
         }
         else {
-            window.alert("Du musst dich zuerst registrieren");
-            console.log("Anmeldung nicht erfolgreich");
+            console.log("fehler beim einloggen");
         }
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
