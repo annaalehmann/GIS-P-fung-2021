@@ -10,6 +10,7 @@ var pruefungsabgabe;
     /**Beim klicken auf den Button wird die Funktion handleLogin durchgeführt**/
     buttonRegistrierung.addEventListener("click", handleRegistrierung);
     async function handleRegistrierung() {
+        console.log("handleRegistrierung start ");
         /*Zugriff auf die Formularwerte des Formulars "formular"*/
         let formData = new FormData(document.forms[0]);
         /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/
@@ -19,16 +20,17 @@ var pruefungsabgabe;
         _url += "/registrierung" + "?" + query.toString();
         let response = await fetch(_url);
         let responseText = await response.text();
-        console.log("ResponseText: " + responseText);
         if (responseText == "true") {
             console.log("Registrierung erfolreich!");
+            window.alert("Du hast dich erfolgreich registriert.");
         }
         else {
-            console.log("Diesen Account gibt es bereits!");
+            console.log("Diesen Account gibt es bereits.");
         }
     }
     /*async: Funktion als asynchrone Kommunikation deklariert, Promise: liefert Antwort vom Server, void: kein Wert? */
     async function handleLogin() {
+        console.log("handleLogin start");
         /*Zugriff auf die Formularwerte des Formulars "formular"*/
         let formData = new FormData(document.forms[0]);
         /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/
@@ -39,12 +41,12 @@ var pruefungsabgabe;
         /*await: Ausführung der Funktion kann unterbrochen und zu einem späteren Zeitpunkt fortgesetzt werden, fetch: an den Server Anfrage verschicken und auf Antwort warten */
         let response = await fetch(url);
         let responseText = await response.text();
-        console.log("ResponseText: " + responseText);
         if (responseText == "true") {
             window.location.href = "index.html";
+            window.alert("DU hast dich erfolgreich eingeloggt");
         }
         else {
-            console.log("fehler beim einloggen");
+            window.alert("Fehler beim Login. Versuche es erneut.");
         }
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));

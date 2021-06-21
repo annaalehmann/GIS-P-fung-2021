@@ -34,7 +34,7 @@ var pruefungsabgabe;
             let pathname = url.pathname;
             console.log(pathname);
             if (pathname == "/registrierung") {
-                if (await registrierungDaten.findOne(url.query)) { //Query auslesen
+                if (await registrierungDaten.findOne(url.query)) {
                     response.write("false");
                     console.log("Bereits registriert");
                 }
@@ -45,7 +45,7 @@ var pruefungsabgabe;
                 }
             }
             if (pathname == "/login") {
-                if (await registrierungDaten.findOne(url.query)) { //Query auslesen
+                if (await registrierungDaten.findOne(url.query)) {
                     response.write("true");
                     console.log("Login-Daten vorhanden");
                 }

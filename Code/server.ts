@@ -49,7 +49,7 @@ export namespace pruefungsabgabe {
 
             if (pathname == "/registrierung") {
 
-                if (await registrierungDaten.findOne(url.query)) {    //Query auslesen
+                if (await registrierungDaten.findOne(url.query)) {
                     response.write("false");
                     console.log("Bereits registriert");
                   }
@@ -64,7 +64,7 @@ export namespace pruefungsabgabe {
 
             if (pathname == "/login") {
           
-                if (await registrierungDaten.findOne(url.query)) {    //Query auslesen
+                if (await registrierungDaten.findOne(url.query)) {
                   response.write("true");
                   console.log("Login-Daten vorhanden");
                 }
