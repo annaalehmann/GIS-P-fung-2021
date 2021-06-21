@@ -46,7 +46,7 @@ form {
 input {
     width: 280px;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 8px;
 }
 
 #nutzername,
@@ -65,7 +65,7 @@ button {
     text-align: center;
     background-color: #eca900;
     border-color: transparent;
-    border-radius: 20px;
+    border-radius: 8px;
     cursor: pointer;
     transition: 0.3s ease-out;
 }

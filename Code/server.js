@@ -49,10 +49,13 @@ var pruefungsabgabe;
                     response.write("true");
                     console.log("Login-Daten vorhanden");
                 }
-                else {
-                    response.write("false");
-                    console.log("Keine Login-Daten vorhanden");
-                }
+            }
+            else {
+                response.write("false");
+                console.log("Keine Login-Daten vorhanden");
+            }
+            if (pathname == "/publishRecipes") {
+                rezepteDaten.insertOne(url.query);
             }
             response.end();
         }

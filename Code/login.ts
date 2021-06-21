@@ -13,7 +13,6 @@ namespace pruefungsabgabe {
 
     async function handleRegistrierung(): Promise<void> {
 
-        console.log("handleRegistrierung start ");
         /*Zugriff auf die Formularwerte des Formulars "formular"*/
         let formData: FormData = new FormData(document.forms[0]);
 
@@ -35,12 +34,10 @@ namespace pruefungsabgabe {
         }
     }
 
-    console.log("Vor handleLogin");
 
     /*async: Funktion als asynchrone Kommunikation deklariert, Promise: liefert Antwort vom Server, void: kein Wert? */
     async function handleLogin(): Promise<void> {
 
-        console.log("handleLogin start");
         /*Zugriff auf die Formularwerte des Formulars "formular"*/
         let formData: FormData = new FormData(document.forms[0]);
 
@@ -50,9 +47,7 @@ namespace pruefungsabgabe {
         let _url: string = "http://localhost:8100";
         _url = _url + "/login" + "?" + query.toString();
 
-
         /*await: Ausführung der Funktion kann unterbrochen und zu einem späteren Zeitpunkt fortgesetzt werden, fetch: an den Server Anfrage verschicken und auf Antwort warten */
-
         console.log(_url);
         let response: Response = await fetch(_url);
         let responseText: string = await response.text();

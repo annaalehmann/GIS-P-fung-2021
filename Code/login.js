@@ -10,7 +10,6 @@ var pruefungsabgabe;
     /**Beim klicken auf den Button wird die Funktion handleLogin durchgeführt**/
     buttonRegistrierung.addEventListener("click", handleRegistrierung);
     async function handleRegistrierung() {
-        console.log("handleRegistrierung start ");
         /*Zugriff auf die Formularwerte des Formulars "formular"*/
         let formData = new FormData(document.forms[0]);
         /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/
@@ -27,10 +26,8 @@ var pruefungsabgabe;
             window.alert("Registrierung fehlgeschlagen. Wohlmöglich gibt es diesen Account schon.");
         }
     }
-    console.log("Vor handleLogin");
     /*async: Funktion als asynchrone Kommunikation deklariert, Promise: liefert Antwort vom Server, void: kein Wert? */
     async function handleLogin() {
-        console.log("handleLogin start");
         /*Zugriff auf die Formularwerte des Formulars "formular"*/
         let formData = new FormData(document.forms[0]);
         /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/

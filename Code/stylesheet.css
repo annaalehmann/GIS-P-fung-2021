@@ -45,6 +45,7 @@ header {
     color: white;
     margin-left: 5px;
     margin-top: 40px;
+    font-size: 20px;
 }
 
 .menueContainer {
@@ -114,35 +115,29 @@ a {
     margin-top: 80px;
 }
 
-.buttonRezeptübersicht {
+.buttonContainer {
+    display: flex;
+    width: 100%;
+}
+
+.button {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 16px;
     font-weight: 700;
-    background-color: rgb(233, 233, 233);
-    width: 200px;
+    background-color: rgb(0, 0, 0);
+    color: white;
     padding: 10px;
-    border-radius: 30px;
     text-align: center;
     margin-top: 20px;
     cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    transition: 0.3s ease-out;
 }
 
-.buttonRezeptübersicht {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    background-color: rgb(233, 233, 233);
-    width: 200px;
-    padding: 10px;
-    border-radius: 30px;
-    text-align: center;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: 0.3s ease-in;
-}
-
-.buttonRezeptübersicht:hover {
-    background-color: rgb(238, 238, 238);
+.button:hover {
+    background-color: rgb(41, 41, 41);
     transition: 0.3s ease-in;
 }
 
@@ -150,22 +145,26 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: green;
 }
 
-.ebeneRezepte {
-    display: flex;
-    justify-content: center;
+.ebeneRezepteErstellen {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
     padding-top: 30px;
     padding-bottom: 30px;
     background-color: #eca900;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
-.ebeneRezepte .ueberschrift {
+.ebeneRezepteErstellen .ueberschrift {
     text-align: left;
+    width: 100%;
+}
+
+.links {
     width: 45%;
 }
 
@@ -175,13 +174,39 @@ a {
 }
 
 #zutatenliste {
-    width: 200px;
+    width: 230px;
 }
 
-.zutaten {
-    margin: 5px;
+input {
+    width: 160px;
+    border: none;
+    padding: 15px 10px 0px 10px;
+    border-bottom: 2px solid white;
+    outline: none;
+    background: transparent;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 800;
+    color: white;
 }
 
-#zutatenanweisung {
-    margin-top: 5px;
+input:active,
+input:focus {
+    border-color: transparent;
+    border-bottom: 2px solid white;
+}
+
+#zubereitungsanweisung {
+    margin-top: 18px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 800;
+    color: rgba(46, 46, 46, 0.884);
+    padding: 20px;
+    border-radius: 3px;
 }
