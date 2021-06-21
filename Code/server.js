@@ -49,13 +49,16 @@ var pruefungsabgabe;
                     response.write("true");
                     console.log("Login-Daten vorhanden");
                 }
+                else {
+                    response.write("false");
+                    console.log("Keine Login-Daten vorhanden");
+                }
             }
-            else {
-                response.write("false");
-                console.log("Keine Login-Daten vorhanden");
-            }
-            if (pathname == "/publishRecipes") {
+            if (pathname == "/publish") {
                 rezepteDaten.insertOne(url.query);
+                console.log("Rezeptdaten in Datenbank übertragen");
+                response.write(JSON.stringify(await rezepteDaten.find().toArray()));
+                console.log("Rezeptdaten werden auf der Website angezeigt");
             }
             response.end();
         }

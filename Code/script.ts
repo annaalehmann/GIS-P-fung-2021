@@ -10,8 +10,11 @@ async function handlePublishRecipes(): Promise<void> {
     let query: URLSearchParams = new URLSearchParams(<any>formData);
     /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
     let _url: string = "http://localhost:8100";
-    _url += "/publishRecipes" + "?" + query.toString();
-    await fetch(_url);
-
+    _url += "/publish" + "?" + query.toString();
+    let response: Response = await fetch(_url, {method: "get"});
+    let responseText: string = await response.text();
+  
+    (<HTMLElement>document.getElementById("myRecipes")).innerHTML = responseText;
 }
+
 }

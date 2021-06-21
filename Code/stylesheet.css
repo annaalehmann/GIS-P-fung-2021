@@ -168,7 +168,7 @@ a {
     width: 45%;
 }
 
-#rezept {
+#rezeptFormular {
     display: flex;
     flex-direction: row;
 }
