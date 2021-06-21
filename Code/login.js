@@ -41,7 +41,10 @@ var pruefungsabgabe;
         let responseText = await response.text();
         console.log("test3");
         if (responseText == "true") {
-            console.log("In der If-Answeisung");
+            let nutzername = formData.get("nutzername");
+            let passwort = formData.get("Password");
+            localStorage.setItem("Nutzername", nutzername);
+            localStorage.setItem("Passwort", passwort);
             window.location.href = "index.html";
             window.alert("Du hast dich erfolgreich eingeloggt");
         }

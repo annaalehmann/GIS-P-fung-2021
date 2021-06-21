@@ -55,7 +55,11 @@ namespace pruefungsabgabe {
 
         if (responseText == "true") {
             
-            console.log("In der If-Answeisung");
+            let nutzername: string = <string>formData.get("nutzername");
+            let passwort: string = <string>formData.get("Password");
+            
+            localStorage.setItem("Nutzername", nutzername);
+            localStorage.setItem("Passwort", passwort);
             
             window.location.href = "index.html";
             window.alert("Du hast dich erfolgreich eingeloggt");
