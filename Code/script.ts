@@ -1,9 +1,12 @@
 namespace pruefungsabgabe {
 
-    interface rezept {
+    interface Rezepte {
+        id: string;
         zutaten: string;
         zubereitung: string;
     }
+
+    let rezeptArray: Rezepte[];
 
 
     let publishButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("publish");
@@ -16,10 +19,22 @@ namespace pruefungsabgabe {
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
         _url += "/publish" + "?" + query.toString();
-        let response: Response = await fetch(_url, { method: "get" });
-        let responseText: string = await response.text();
+        await fetch(_url);
 
-        (<HTMLElement>document.getElementById("myRecipes")).innerHTML = responseText;
+
+        for (let i: number = 0; i < rezeptArray.length; i++) {
+
+            let div: HTMLDivElement = document.createElement("div");
+            div.id = "currentRecipeDiv" + i;
+            div.setAttribute("zaehler", i.toString());
+           
+            let zutaten: HTMLElement = document.createElement("p");
+            zutaten.innerHTML = "Zutaten:" + rezeptArray[i].zutaten;
+            div.appendChild(zutaten);
+
+            let zubereitung: HTMLElement = document.createElement("p");
+            zubereitung.innerHTML = "Zubereitung:" + rezeptArray[i].zubereitung;
+            div.appendChild(zubereitung);
+        }
     }
-
 }
