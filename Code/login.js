@@ -17,7 +17,15 @@ var pruefungsabgabe;
         /*let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url = "http://localhost:8100";
         _url += "/registrierung" + "?" + query.toString();
-        await fetch(_url);
+        let response = await fetch(url);
+        let responseText = await response.text();
+        console.log("ResponseText: " + responseText);
+        if (responseText == "true") {
+            console.log("Registrierung erfolreich!");
+        }
+        else {
+            console.log("Diesen Account gibt es bereits!");
+        }
     }
     /*async: Funktion als asynchrone Kommunikation deklariert, Promise: liefert Antwort vom Server, void: kein Wert? */
     async function handleLogin() {

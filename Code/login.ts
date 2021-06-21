@@ -20,7 +20,20 @@ namespace pruefungsabgabe {
         /*let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
         _url += "/registrierung" + "?" + query.toString();
-        await fetch(_url);
+
+        let response: Response = await fetch(url);
+        let responseText: string = await response.text();
+
+        console.log("ResponseText: " + responseText);
+
+       
+        if (responseText == "true") {
+            console.log("Registrierung erfolreich!")
+        }
+
+        else {
+           console.log("Diesen Account gibt es bereits!");
+        }
     }
 
 
@@ -44,7 +57,6 @@ namespace pruefungsabgabe {
 
        
         if (responseText == "true") {
-
             window.location.href = "index.html";
         }
 

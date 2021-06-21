@@ -48,7 +48,17 @@ export namespace pruefungsabgabe {
             console.log(pathname);
 
             if (pathname == "/registrierung") {
-                registrierungDaten.insertOne(url.query);
+
+                if (await registrierungDaten.findOne(url.query)) {    //Query auslesen
+                    response.write("false");
+                    console.log("Bereits registriert");
+                  }
+        
+                  else {
+                    response.write("true");
+                    registrierungDaten.insertOne(url.query);
+                    console.log("Registrierung ausführen");
+                  }
             }
 
 
@@ -56,7 +66,7 @@ export namespace pruefungsabgabe {
           
                 if (await registrierungDaten.findOne(url.query)) {    //Query auslesen
                   response.write("true");
-                  console.log("Login-Daten vorhanden, login durchführen");
+                  console.log("Login-Daten vorhanden");
                 }
       
                 else {
