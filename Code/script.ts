@@ -1,11 +1,10 @@
 namespace pruefungsabgabe {
 
-    interface Nutzer {
-        id: string; 
-        nutzername: string; 
-        passwort: string; 
-
-    }
+  /*interface Nutzer {
+        id: string;
+        nutzername: string;
+        passwort: string;
+    }*/
 
     interface Rezepte {
         id: string;
@@ -13,40 +12,44 @@ namespace pruefungsabgabe {
         zubereitung: string;
     }
 
+    let rezeptArray: Rezepte[];
+
 
     let publishButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("publish");
     publishButton.addEventListener("click", handlePublishRecipes);
 
     async function handlePublishRecipes(): Promise<void> {
 
-        let id: Nutzer = JSON.parse(localStorage.getItem("nutzername"));
+        /* let id: Nutzer = JSON.parse(localStorage.getItem("nutzername"));*/
+
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        query.append("id", id.id);
-
-
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
         _url += "/publish" + "?" + query.toString();
+
         let response: Response = await fetch(_url);
-        let responseText: string = await response.text();
-        let splitResponseText: Rezepte[] = JSON.parse(responseText.split("$")[1]);
+        let responseJSON: string = await response.json();
+        rezeptArray = JSON.parse(JSON.stringify(responseJSON));
 
-        let posten: HTMLDivElement = (<HTMLDivElement>document.getElementById("myRecipes"));
+        document.getElementById("myRecipes").innerHTML = "";
 
-        for (let i: number = 0; i < splitResponseText.length; i++) {
+        /*query.append("id", id.id);*/
 
-            let div: HTMLDivElement = <HTMLDivElement>document.createElement("div");
+        for (let i: number = 0; i < rezeptArray.length; i++) {
+
+            let div: HTMLDivElement = document.createElement("div");
             div.id = "currentRecipeDiv" + i;
-            posten.appendChild(div);
+            div.classList.add("currentRecipeClass");
             div.setAttribute("zaehler", i.toString());
+            document.getElementById("myRecipes").appendChild(div);
 
             let zutaten: HTMLElement = document.createElement("p");
-            zutaten.innerHTML = "Zutaten:" + splitResponseText[i].zutaten;
+            zutaten.innerHTML = "Zutaten:" + rezeptArray[i].zutaten;
             div.appendChild(zutaten);
 
             let zubereitung: HTMLElement = document.createElement("p");
-            zubereitung.innerHTML = "Zubereitung:" + splitResponseText[i].zubereitung;
+            zubereitung.innerHTML = "Zubereitung:" + rezeptArray[i].zubereitung;
             div.appendChild(zubereitung);
         }
 

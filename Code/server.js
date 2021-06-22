@@ -58,6 +58,7 @@ var pruefungsabgabe;
                 rezepteDaten.insertOne(url.query);
                 console.log("Rezeptdaten in Datenbank übertragen");
                 response.write(JSON.stringify(await rezepteDaten.find().toArray()));
+                console.log("Rezeptdaten werden auf der Website angezeigt");
             }
             response.end();
         }
