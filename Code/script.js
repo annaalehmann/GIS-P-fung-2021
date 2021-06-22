@@ -28,10 +28,10 @@ var pruefungsabgabe;
             div.setAttribute("zaehler", i.toString());
             document.getElementById("myRecipes").appendChild(div);
             let zutaten = document.createElement("p");
-            zutaten.innerHTML = "Zutaten:" + rezeptArray[i].zutaten;
+            zutaten.innerHTML = "Zutaten: " + rezeptArray[i].zutaten;
             div.appendChild(zutaten);
             let zubereitung = document.createElement("p");
-            zubereitung.innerHTML = "Zubereitung:" + rezeptArray[i].zubereitung;
+            zubereitung.innerHTML = "Zubereitung: " + rezeptArray[i].zubereitung;
             div.appendChild(zubereitung);
         }
     }

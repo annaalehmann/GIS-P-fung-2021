@@ -218,11 +218,12 @@ input:focus {
 .ebeneMeineRezepte {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    background-color: rgb(253, 244, 222);
     padding: 20px;
+    background-color: rgb(241, 241, 241);
 }
 
 .ebeneMeineRezepteContainer .ebeneMeineRezepte .textContainer {
@@ -231,4 +232,15 @@ input:focus {
 
 .ebeneMeineRezepteContainer .ebeneMeineRezepte .textContainer .ueberschrift {
     color: black;
+}
+
+.currentRecipeClass {
+    margin-top: 15px;
+    background-color: rgb(255, 255, 255);
+    width: 40%;
+    padding: 30px;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(32, 32, 32);
+    border-radius: 5px;
 }

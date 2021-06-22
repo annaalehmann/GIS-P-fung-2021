@@ -45,11 +45,11 @@ namespace pruefungsabgabe {
             document.getElementById("myRecipes").appendChild(div);
 
             let zutaten: HTMLElement = document.createElement("p");
-            zutaten.innerHTML = "Zutaten:" + rezeptArray[i].zutaten;
+            zutaten.innerHTML = "Zutaten: " + rezeptArray[i].zutaten;
             div.appendChild(zutaten);
 
             let zubereitung: HTMLElement = document.createElement("p");
-            zubereitung.innerHTML = "Zubereitung:" + rezeptArray[i].zubereitung;
+            zubereitung.innerHTML = "Zubereitung: " + rezeptArray[i].zubereitung;
             div.appendChild(zubereitung);
         }
 
