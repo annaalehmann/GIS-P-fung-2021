@@ -36,6 +36,7 @@ namespace pruefungsabgabe {
 
         for (let i: number = 0; i < rezeptArray.length; i++) {
 
+
             let div: HTMLDivElement = document.createElement("div");
             div.id = "currentRecipeDiv" + i;
             div.classList.add("currentRecipeClass");

@@ -1,16 +1,12 @@
 "use strict";
 var pruefungsabgabe;
 (function (pruefungsabgabe) {
-    /*interface Nutzer {
-          id: string;
-          nutzername: string;
-          passwort: string;
-      }*/
     let rezeptArray;
+    let aktuellerNutzer;
     let publishButton = document.getElementById("publish");
     publishButton.addEventListener("click", handlePublishRecipes);
     async function handlePublishRecipes() {
-        /* let id: Nutzer = JSON.parse(localStorage.getItem("nutzername"));*/
+        aktuellerNutzer = JSON.parse(localStorage.getItem("nutzername"));
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
@@ -20,7 +16,6 @@ var pruefungsabgabe;
         let responseJSON = await response.json();
         rezeptArray = JSON.parse(JSON.stringify(responseJSON));
         document.getElementById("myRecipes").innerHTML = "";
-        /*query.append("id", id.id);*/
         for (let i = 0; i < rezeptArray.length; i++) {
             let div = document.createElement("div");
             div.id = "currentRecipeDiv" + i;
