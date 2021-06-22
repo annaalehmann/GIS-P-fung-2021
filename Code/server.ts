@@ -88,7 +88,6 @@ export namespace pruefungsabgabe {
 
         response.write(JSON.stringify(await rezepteDaten.find().toArray()));
         
-
       }
 
       response.end();
