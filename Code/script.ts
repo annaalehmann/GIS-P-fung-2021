@@ -1,18 +1,17 @@
 namespace pruefungsabgabe {
 
-  /*interface Nutzer {
-        id: string;
+    interface Nutzer {
         nutzername: string;
         passwort: string;
-    }*/
+    }
 
     interface Rezepte {
-        id: string;
         zutaten: string;
         zubereitung: string;
     }
 
     let rezeptArray: Rezepte[];
+    let aktuellerNutzer: Nutzer; 
 
 
     let publishButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("publish");
@@ -20,7 +19,7 @@ namespace pruefungsabgabe {
 
     async function handlePublishRecipes(): Promise<void> {
 
-        /* let id: Nutzer = JSON.parse(localStorage.getItem("nutzername"));*/
+        aktuellerNutzer = JSON.parse(localStorage.getItem("nutzername")!);
 
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
@@ -34,7 +33,6 @@ namespace pruefungsabgabe {
 
         document.getElementById("myRecipes").innerHTML = "";
 
-        /*query.append("id", id.id);*/
 
         for (let i: number = 0; i < rezeptArray.length; i++) {
 
