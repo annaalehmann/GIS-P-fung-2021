@@ -5,6 +5,12 @@ import * as Mongo from "mongodb";
 
 export namespace pruefungsabgabe {
 
+  export interface Rezepte {
+    id: string;
+    zutaten: string;
+    zubereitung: string;
+}
+
   let url: string;
   url = "mongodb+srv://test-user:12345@foodmood.bxjhf.mongodb.net/database_foodmood?retryWrites=true&w=majority";
 
@@ -79,8 +85,9 @@ export namespace pruefungsabgabe {
         rezepteDaten.insertOne(url.query);
         console.log("Rezeptdaten in Datenbank übertragen");
 
+
         response.write(JSON.stringify(await rezepteDaten.find().toArray()));
-        console.log("Rezeptdaten werden auf der Website angezeigt");
+        
 
       }
 

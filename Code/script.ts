@@ -6,6 +6,13 @@ namespace pruefungsabgabe {
         zubereitung: string;
     }
 
+    /*Verbindungsaufbau zur Datenbank*/
+    async function communicate(_url: RequestInfo) {
+        let response: Response = await fetch(_url);
+
+ 
+    }
+
     let rezeptArray: Rezepte[];
 
 
@@ -20,6 +27,8 @@ namespace pruefungsabgabe {
         let _url: string = "http://localhost:8100";
         _url += "/publish" + "?" + query.toString();
         await fetch(_url);
+
+        
 
 
         for (let i: number = 0; i < rezeptArray.length; i++) {

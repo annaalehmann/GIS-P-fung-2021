@@ -1,6 +1,10 @@
 "use strict";
 var pruefungsabgabe;
 (function (pruefungsabgabe) {
+    /*Verbindungsaufbau zur Datenbank*/
+    async function communicate(_url) {
+        let response = await fetch(_url);
+    }
     let rezeptArray;
     let publishButton = document.getElementById("publish");
     publishButton.addEventListener("click", handlePublishRecipes);
