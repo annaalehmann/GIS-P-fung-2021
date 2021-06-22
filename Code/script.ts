@@ -1,19 +1,17 @@
 namespace pruefungsabgabe {
 
+    interface Nutzer {
+        id: string; 
+        nutzername: string; 
+        passwort: string; 
+
+    }
+
     interface Rezepte {
         id: string;
         zutaten: string;
         zubereitung: string;
     }
-
-    /*Verbindungsaufbau zur Datenbank*/
-    async function communicate(_url: RequestInfo) {
-        let response: Response = await fetch(_url);
-
- 
-    }
-
-    let rezeptArray: Rezepte[];
 
 
     let publishButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("publish");
@@ -21,31 +19,35 @@ namespace pruefungsabgabe {
 
     async function handlePublishRecipes(): Promise<void> {
 
+        let id: Nutzer = JSON.parse(localStorage.getItem("nutzername"));
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
+        query.append("id", id.id);
+
+
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
         _url += "/publish" + "?" + query.toString();
-        await fetch(_url);
+        let response: Response = await fetch(_url);
+        let responseText: string = await response.text();
+        let splitResponseText: Rezepte[] = JSON.parse(responseText.split("$")[1]);
 
-        
+        let posten: HTMLDivElement = (<HTMLDivElement>document.getElementById("myRecipes"));
 
+        for (let i: number = 0; i < splitResponseText.length; i++) {
 
-        for (let i: number = 0; i < rezeptArray.length; i++) {
-
-            let div: HTMLDivElement = document.createElement("div");
+            let div: HTMLDivElement = <HTMLDivElement>document.createElement("div");
             div.id = "currentRecipeDiv" + i;
+            posten.appendChild(div);
             div.setAttribute("zaehler", i.toString());
-           
+
             let zutaten: HTMLElement = document.createElement("p");
-            zutaten.innerHTML = "Zutaten:" + rezeptArray[i].zutaten;
+            zutaten.innerHTML = "Zutaten:" + splitResponseText[i].zutaten;
             div.appendChild(zutaten);
 
             let zubereitung: HTMLElement = document.createElement("p");
-            zubereitung.innerHTML = "Zubereitung:" + rezeptArray[i].zubereitung;
+            zubereitung.innerHTML = "Zubereitung:" + splitResponseText[i].zubereitung;
             div.appendChild(zubereitung);
-
-           
         }
 
     }
