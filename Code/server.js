@@ -6,6 +6,7 @@ const Url = require("url");
 const Mongo = require("mongodb");
 var pruefungsabgabe;
 (function (pruefungsabgabe) {
+    let nutzerArray;
     let url;
     url = "mongodb+srv://test-user:12345@foodmood.bxjhf.mongodb.net/database_foodmood?retryWrites=true&w=majority";
     let registrierungDaten;
@@ -46,6 +47,7 @@ var pruefungsabgabe;
             }
             if (pathname == "/login") {
                 if (await registrierungDaten.findOne(url.query)) {
+                    nutzerArray = JSON.parse(JSON.stringify(url.query));
                     response.write("true");
                     console.log("Login-Daten vorhanden");
                 }
@@ -57,7 +59,7 @@ var pruefungsabgabe;
             if (pathname == "/publish") {
                 rezepteDaten.insertOne(url.query);
                 console.log("Rezeptdaten in Datenbank übertragen");
-                response.write(JSON.stringify(await rezepteDaten.find().toArray()));
+                response.write(JSON.stringify(await rezepteDaten.find({ "autor": nutzerArray.nutzername }).toArray()));
                 console.log("Rezeptdaten werden auf der Website angezeigt");
             }
             response.end();

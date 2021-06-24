@@ -2,16 +2,14 @@
 var pruefungsabgabe;
 (function (pruefungsabgabe) {
     let rezeptArray;
-    let aktuellerNutzer;
     let publishButton = document.getElementById("publish");
     publishButton.addEventListener("click", handlePublishRecipes);
     async function handlePublishRecipes() {
-        aktuellerNutzer = JSON.parse(localStorage.getItem("nutzername"));
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url = "http://localhost:8100";
-        _url += "/publish" + "?" + query.toString();
+        _url += "/publish" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
         let response = await fetch(_url);
         let responseJSON = await response.json();
         rezeptArray = JSON.parse(JSON.stringify(responseJSON));
@@ -28,6 +26,9 @@ var pruefungsabgabe;
             let zubereitung = document.createElement("p");
             zubereitung.innerHTML = "Zubereitung: " + rezeptArray[i].zubereitung;
             div.appendChild(zubereitung);
+            let autor = document.createElement("p");
+            autor.innerHTML = "Autor: " + rezeptArray[i].autor;
+            div.appendChild(autor);
         }
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
