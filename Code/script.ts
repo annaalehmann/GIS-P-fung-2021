@@ -1,17 +1,12 @@
 namespace pruefungsabgabe {
 
-    interface Nutzer {
-        nutzername: string;
-        passwort: string;
-    }
-
     interface Rezepte {
         zutaten: string;
         zubereitung: string;
+        autor: string; 
     }
 
     let rezeptArray: Rezepte[];
-    let aktuellerNutzer: Nutzer; 
 
 
     let publishButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("publish");
@@ -19,13 +14,11 @@ namespace pruefungsabgabe {
 
     async function handlePublishRecipes(): Promise<void> {
 
-        aktuellerNutzer = JSON.parse(localStorage.getItem("nutzername")!);
-
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
-        _url += "/publish" + "?" + query.toString();
+        _url += "/publish" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
 
         let response: Response = await fetch(_url);
         let responseJSON: string = await response.json();
@@ -49,6 +42,10 @@ namespace pruefungsabgabe {
             let zubereitung: HTMLElement = document.createElement("p");
             zubereitung.innerHTML = "Zubereitung: " + rezeptArray[i].zubereitung;
             div.appendChild(zubereitung);
+
+            let autor: HTMLElement = document.createElement("p");
+            autor.innerHTML = "Autor: " +  rezeptArray[i].autor; 
+            div.appendChild(autor);
         }
 
     }

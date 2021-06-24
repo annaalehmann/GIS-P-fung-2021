@@ -5,11 +5,12 @@ import * as Mongo from "mongodb";
 
 export namespace pruefungsabgabe {
 
-  export interface Rezepte {
-    id: string;
-    zutaten: string;
-    zubereitung: string;
-}
+  export interface Nutzer {
+    nutzername: string;
+    passwort: string;
+  }
+
+  let nutzerArray: Nutzer;
 
   let url: string;
   url = "mongodb+srv://test-user:12345@foodmood.bxjhf.mongodb.net/database_foodmood?retryWrites=true&w=majority";
@@ -71,21 +72,23 @@ export namespace pruefungsabgabe {
       if (pathname == "/login") {
 
         if (await registrierungDaten.findOne(url.query)) {
+          nutzerArray = JSON.parse(JSON.stringify(url.query));
           response.write("true");
           console.log("Login-Daten vorhanden");
         }
-      
-      else {
-        response.write("false");
-        console.log("Keine Login-Daten vorhanden");
+
+        else {
+          response.write("false");
+          console.log("Keine Login-Daten vorhanden");
+        }
       }
-    }
 
       if (pathname == "/publish") {
         rezepteDaten.insertOne(url.query);
         console.log("Rezeptdaten in Datenbank übertragen");
 
-        response.write(JSON.stringify(await rezepteDaten.find().toArray()));
+
+        response.write(JSON.stringify(await rezepteDaten.find({"autor": nutzerArray.nutzername}).toArray()));
         console.log("Rezeptdaten werden auf der Website angezeigt");
       }
 
