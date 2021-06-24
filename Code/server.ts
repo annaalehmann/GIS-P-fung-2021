@@ -89,7 +89,7 @@ export namespace pruefungsabgabe {
 
 
         response.write(JSON.stringify(await rezepteDaten.find({"autor": nutzerArray.nutzername}).toArray()));
-        console.log("Rezeptdaten werden auf der Website angezeigt");
+        console.log("Alle Rezepte des Autors werden auf der Website angezeigt");
       }
 
       response.end();
