@@ -70,7 +70,7 @@ a {
     color: black;
 }
 
-.menuepunkt a {
+.menuetext {
     font-size: 16px;
     color: #6d6d6d;
     padding: 40px;
@@ -84,7 +84,7 @@ a {
     transition: 0.3s ease-in;
 }
 
-.menuepunktIcon {
+.menuepunktIcon img {
     display: none;
 }
 
@@ -272,7 +272,7 @@ input:focus {
     .ebeneHeader {
         width: 90%;
     }
-    .menuepunkt a {
+    .menuetext {
         padding: 25px;
     }
     .textContainer {
@@ -297,9 +297,6 @@ input:focus {
     .menueContainer {
         right: 10px;
     }
-    .menuepunkt a {
-        padding: 25px;
-    }
     /*Startseite*/
     .ebeneHeader {
         width: 95%;
@@ -319,7 +316,7 @@ input:focus {
 }
 
 @media screen and (max-width: 720px) {
-    .menuepunkt a {
+    .menuetext {
         font-size: 14px;
         padding: 10px;
     }
@@ -343,20 +340,17 @@ input:focus {
     }
 }
 
-@media screen and (max-width: 560px) {
-    .menuepunktIcon {
+@media screen and (max-width: 600px) {
+    .menuepunktIcon img {
         display: block;
-        width: 20px;
-    }
-    .logo {
-        width: 120px;
-    }
-    .menuepunktIcon {
         width: 18px;
         padding: 12px;
     }
     .menuetext {
         display: none;
+    }
+    .logo {
+        width: 120px;
     }
     /*Startseite*/
     .ebeneHeader {
