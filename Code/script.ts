@@ -3,7 +3,7 @@ namespace pruefungsabgabe {
     interface Rezepte {
         zutaten: string;
         zubereitung: string;
-        autor: string; 
+        autor: string;
     }
 
     let rezeptArray: Rezepte[];
@@ -44,7 +44,7 @@ namespace pruefungsabgabe {
             div.appendChild(zubereitung);
 
             let autor: HTMLElement = document.createElement("p");
-            autor.innerHTML = "Autor: " +  rezeptArray[i].autor; 
+            autor.innerHTML = "Autor: " + rezeptArray[i].autor;
             div.appendChild(autor);
         }
 
