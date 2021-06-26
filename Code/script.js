@@ -48,7 +48,7 @@ var pruefungsabgabe;
         let query = new URLSearchParams(formData);
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url = "http://localhost:8100";
-        _url += "/publishAllRecipe" + "?";
+        _url += "/publishAllRecipe" + "?" + query.toString();
         let response = await fetch(_url);
         let responseJSON = await response.json();
         rezeptArray = JSON.parse(JSON.stringify(responseJSON));

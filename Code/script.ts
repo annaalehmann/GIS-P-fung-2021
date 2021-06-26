@@ -28,8 +28,10 @@ namespace pruefungsabgabe {
 
     //Rezepte des Nutzers anzeigen
     async function handlePublishMyRecipes(): Promise<void> {
+       
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
+        
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
         _url += "/publishMyRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
@@ -38,9 +40,7 @@ namespace pruefungsabgabe {
         let responseJSON: string = await response.json();
         rezeptArray = JSON.parse(JSON.stringify(responseJSON));
 
-
         document.getElementById("myRecipes").innerHTML = "";
-
 
         for (let i: number = 0; i < rezeptArray.length; i++) {
 
@@ -71,7 +71,7 @@ namespace pruefungsabgabe {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
-        _url += "/publishAllRecipe" + "?" ;
+        _url += "/publishAllRecipe" + "?" + query.toString();
 
         let response: Response = await fetch(_url);
         let responseJSON: string = await response.json();
