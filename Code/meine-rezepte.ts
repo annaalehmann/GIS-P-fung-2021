@@ -33,7 +33,7 @@ namespace pruefungsabgabe {
         
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
-        _url += "/publishMyRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
+        _url += "/publishMyRecipe" + "?" + query.toString();
 
         let response: Response = await fetch(_url);
         let responseJSON: string = await response.json();
