@@ -68,7 +68,6 @@ export namespace pruefungsabgabe {
         }
       }
 
-
       if (pathname == "/login") {
 
         if (await registrierungDaten.findOne(url.query)) {
