@@ -404,6 +404,10 @@ input:focus {
     .currentRecipeClass {
         line-height: 30px;
     }
+    /*Alle Rezepte*/
+    .ebeneAlleRezepte {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 1115px) {
@@ -470,6 +474,10 @@ input:focus {
     .currentRecipeClass {
         font-size: 18px;
         line-height: 25px;
+    }
+    /*Alle Rezepte*/
+    .ebeneAlleRezepte {
+        width: 95%;
     }
 }
 

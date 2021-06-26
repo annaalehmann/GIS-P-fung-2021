@@ -72,7 +72,6 @@ namespace pruefungsabgabe {
         
         let i: string = (<HTMLDivElement>_event.target)?.getAttribute("zaehler")!;
         document.getElementById("currentRecipeDiv" + i)?.remove();
-
        
         /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";

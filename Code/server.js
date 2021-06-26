@@ -68,11 +68,15 @@ var pruefungsabgabe;
                 response.write(JSON.stringify(await rezepteDaten.find().toArray()));
                 console.log("Alle Rezepte werden angezeigt");
             }
-            if (pathname == "/delete") {
-                console.log("Rezept gelöscht");
+            if (pathname == "/deleteMyRecipe") {
+                let rezepte = await rezepteDaten.find().toArray();
+                for (let i = 0; i < rezepte.length; i++) {
+                    JSON.stringify(rezepteDaten.deleteOne(rezepte));
+                    console.log("Rezept gelöscht");
+                }
             }
+            response.end();
         }
-        response.end();
     }
 })(pruefungsabgabe = exports.pruefungsabgabe || (exports.pruefungsabgabe = {}));
 //# sourceMappingURL=server.js.map

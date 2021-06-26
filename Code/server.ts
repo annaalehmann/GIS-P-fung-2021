@@ -97,13 +97,17 @@ export namespace pruefungsabgabe {
         console.log("Alle Rezepte werden angezeigt");
       }
 
-      if (pathname == "/delete") {
+      if (pathname == "/deleteMyRecipe") {
 
-        console.log("Rezept gelöscht");
+        let rezepte: String[] = await rezepteDaten.find().toArray();
+
+        for (let i: number = 0; i < rezepte.length; i++) {
+          JSON.stringify(rezepteDaten.deleteOne(rezepte));
+          console.log("Rezept gelöscht");
+        }
       }
-    }
 
-    response.end();
+      response.end();
+    }
   }
 }
-
