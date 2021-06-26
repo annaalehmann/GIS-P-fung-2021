@@ -69,6 +69,7 @@ namespace pruefungsabgabe {
 
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
+        
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
         _url += "/publishAllRecipe" + "?" + query.toString();
@@ -76,7 +77,6 @@ namespace pruefungsabgabe {
         let response: Response = await fetch(_url);
         let responseJSON: string = await response.json();
         rezeptArray = JSON.parse(JSON.stringify(responseJSON));
-
 
         document.getElementById("allRecipes").innerHTML = "";
 
