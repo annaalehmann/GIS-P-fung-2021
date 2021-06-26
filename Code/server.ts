@@ -83,13 +83,19 @@ export namespace pruefungsabgabe {
         }
       }
 
-      if (pathname == "/publish") {
+      if (pathname == "/insertRecipe") {
         rezepteDaten.insertOne(url.query);
         console.log("Rezeptdaten in Datenbank übertragen");
+      }
 
-
+      if (pathname == "/publishMyRecipe") {
         response.write(JSON.stringify(await rezepteDaten.find({"autor": nutzerArray.nutzername}).toArray()));
-        console.log("Alle Rezepte des Autors werden auf der Website angezeigt");
+        console.log("Alle Rezepte des Autors werden angezeigt");
+      }
+
+      if (pathname == "/publishAllRecipes") {
+        response.write(rezepteDaten.find().toArray());
+        console.log("Alle Rezepte werden angezeigt");
       }
 
       response.end();
