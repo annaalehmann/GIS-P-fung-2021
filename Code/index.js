@@ -4,11 +4,9 @@ var pruefungsabgabe;
     let rezeptArray;
     handlePublishAllRecipes();
     async function handlePublishAllRecipes() {
-        let formData = new FormData(document.forms[0]);
-        let query = new URLSearchParams(formData);
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url = "http://localhost:8100";
-        _url += "/publishAllRecipe" + "?" + query.toString();
+        _url += "/publishAllRecipes" + "?";
         let response = await fetch(_url);
         let responseJSON = await response.json();
         rezeptArray = JSON.parse(JSON.stringify(responseJSON));

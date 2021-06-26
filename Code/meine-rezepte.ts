@@ -18,7 +18,8 @@ namespace pruefungsabgabe {
 
     //Rezept in Datenbank einfügen
     async function handleInsert(): Promise<void> {
-      
+
+        /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
         _url += "/insertRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
         await fetch(_url);
@@ -59,6 +60,5 @@ namespace pruefungsabgabe {
             autor.innerHTML = "Autor: " + rezeptArray[i].autor;
             div.appendChild(autor);
         }
-
     }
 }

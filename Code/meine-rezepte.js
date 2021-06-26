@@ -9,6 +9,7 @@ var pruefungsabgabe;
     handlePublishMyRecipes();
     //Rezept in Datenbank einfügen
     async function handleInsert() {
+        /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url = "http://localhost:8100";
         _url += "/insertRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
         await fetch(_url);
