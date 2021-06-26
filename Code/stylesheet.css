@@ -98,12 +98,11 @@ a {
     margin-top: 30px;
 }
 
-.ebeneHeader {
+.ebeneHomeHeader {
     display: flex;
     flex-direction: row-reverse;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
     height: 100%;
     width: 80%;
     background-color: #eca900;
@@ -157,38 +156,63 @@ a {
 /*Meine Rezepte*/
 
 .ebeneRezepteErstellen {
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    height: 100%;
     width: 80%;
-    padding-top: 30px;
-    padding-bottom: 30px;
     background-color: #eca900;
+}
+
+.titleContainer {
+    background-image: url(Bilder/rezeptBild.png);
+    background-attachment: local;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 40%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 25px;
+}
+
+.titleContainer .buttonContainer {
+    margin-top: -20px;
+}
+
+.formularConainter {
     display: flex;
     justify-content: center;
-    padding: 20px;
-    padding-bottom: 50px;
-}
-
-.ebeneRezepteErstellen .ueberschrift {
-    text-align: left;
+    align-items: center;
     width: 100%;
-}
-
-.links {
-    width: 45%;
+    padding-bottom: 30px;
+    padding-top: 10px;
 }
 
 #rezeptFormular {
     display: flex;
     flex-direction: row;
+    width: 90%;
+    padding-left: 50px;
 }
 
 #zutatenliste {
-    width: 230px;
+    width: 40%;
+}
+
+#zubereitung {
+    width: 60%;
+    padding-left: 20px;
 }
 
 input {
-    width: 160px;
+    width: 150px;
     border: none;
     padding: 15px 10px 0px 10px;
     border-bottom: 2px solid white;
@@ -208,24 +232,28 @@ input:focus {
 }
 
 #zubereitungsanweisung {
-    margin-top: 18px;
     background-color: rgb(255, 255, 255);
+    border-radius: 3px;
     border: none;
     outline: none;
+    padding: 20px;
+    margin-top: 25px;
+    height: 67%;
+    width: 70%;
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
     font-size: 16px;
     font-weight: 800;
     color: rgba(46, 46, 46, 0.884);
-    padding: 20px;
-    border-radius: 3px;
 }
+
+
+/*Meine Rezepte einsehen*/
 
 .ebeneMeineRezepteContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
     width: 100%;
     height: 100%;
 }
@@ -237,7 +265,6 @@ input:focus {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    padding: 20px;
     background-color: rgb(241, 241, 241);
 }
 
@@ -268,8 +295,11 @@ input:focus {
     .menueContainer {
         right: 40px;
     }
+    .ueberschrift {
+        font-size: 40px;
+    }
     /*Startseite*/
-    .ebeneHeader {
+    .ebeneHomeHeader {
         width: 90%;
     }
     .menuetext {
@@ -280,12 +310,18 @@ input:focus {
         padding-bottom: 30px;
     }
     .textContainer .ueberschrift {
-        font-size: 40px;
         margin-top: 0px;
     }
     .textContainer .textkoerper {
         margin-top: -10px;
         line-height: 30px;
+    }
+    /*Meine Rezepte*/
+    .ebeneRezepteErstellen {
+        width: 90%;
+    }
+    input {
+        width: 120px;
     }
 }
 
@@ -297,21 +333,49 @@ input:focus {
     .menueContainer {
         right: 10px;
     }
+    .ueberschrift {
+        font-size: 30px;
+    }
     /*Startseite*/
-    .ebeneHeader {
+    .ebeneHomeHeader {
         width: 95%;
     }
     .textContainer {
         padding-top: 30px;
         padding-bottom: 30px;
     }
-    .textContainer .ueberschrift {
-        font-size: 30px;
-        margin-top: 0px;
-    }
     .textContainer .textkoerper {
         font-size: 18px;
         line-height: 25px;
+    }
+    /*Meine Rezepte*/
+    .ebeneRezepteErstellen {
+        width: 95%;
+    }
+    #rezeptFormular {
+        flex-direction: column;
+        padding-left: 0px;
+    }
+    #zutatenliste {
+        width: 100%;
+    }
+    #zubereitung {
+        width: 100%;
+        padding-left: 0px;
+    }
+    .zutatenlisteInput {
+        display: flex;
+        flex-direction: row;
+    }
+    #zutatenliste1 {
+        margin-right: 40px;
+    }
+    input {
+        width: 100%;
+    }
+    #zubereitungsanweisung {
+        height: 150px;
+        width: 90%;
     }
 }
 
@@ -338,6 +402,22 @@ input:focus {
         padding: 8px;
         margin-top: 10px;
     }
+    /*Meine Rezepte*/
+    .ebeneRezepteErstellen {
+        flex-direction: column;
+    }
+    .titleContainer {
+        background-position: top;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .titleContainer .buttonContainer {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .titleContainer {
+        background-image: url(Bilder/rezeptBild_dunkler.png);
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -353,7 +433,7 @@ input:focus {
         width: 120px;
     }
     /*Startseite*/
-    .ebeneHeader {
+    .ebeneHomeHeader {
         flex-direction: column-reverse;
     }
     .headerBild {
@@ -364,5 +444,17 @@ input:focus {
     }
     .textContainer .textkoerper {
         display: block;
+    }
+    /*Meine Rezepte*/
+    #zubereitungsanweisung {
+        height: 200px;
+        width: 85%;
+    }
+    .ueberschriftContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
     }
 }

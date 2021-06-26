@@ -2,6 +2,8 @@
 <html lang="de">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>foodmood | Meine Rezepte</title>
     <link rel="icon" href="#">
     <link rel="stylesheet" href="stylesheet.css">
@@ -36,28 +38,40 @@
 
     <div class="ebenenContainer">
         <div class="ebeneRezepteErstellen">
-            <div class="links">
-                <h1 class="ueberschrift">Veröffentliche dein eigenes Rezept</h1>
-                <button class="button" id="publish">rezept veröffentlichen</button>
+
+            <div class="titleContainer">
+                <div class="ueberschriftContainer">
+                    <h1 class="ueberschrift">Veröffentliche dein eigenes Rezept</h1>
+                </div>
+                <div class="buttonContainer">
+                    <button class="button" id="publish">rezept veröffentlichen</button>
+                </div>
             </div>
-            <div>
+
+            <div class="formularConainter">
                 <form id="rezeptFormular">
                     <div id="zutatenliste">
                         <h3 class="unterueberschrift">Zutatenliste:</h1>
-                            <input type="text" class="zutaten" id="zutat1" name="zutaten">
-                            <input type="text" class="zutaten" id="zutat2" name="zutaten">
-                            <input type="text" class="zutaten" id="zutat3" name="zutaten">
-                            <input type="text" class="zutaten" id="zutat4" name="zutaten">
-                            <input type="text" class="zutaten" id="zutat5" name="zutaten">
-                            <input type="text" class="zutaten" id="zutat6" name="zutaten">
-                            <input type="text" class="zutaten" id="zutat7" name="zutaten">
-                            <input type="text" class="zutaten" id="zutat8" name="zutaten">
-                            <input type="text" class="zutaten" id="zutat9" name="zutaten">
-                            <input type="text" class="zutaten" id="zutat10" name="zutaten">
+                            <div class="zutatenlisteInput">
+                                <div id="zutatenliste1">
+                                    <input type="text" class="zutaten" id="zutat1" name="zutaten">
+                                    <input type="text" class="zutaten" id="zutat2" name="zutaten">
+                                    <input type="text" class="zutaten" id="zutat3" name="zutaten">
+                                    <input type="text" class="zutaten" id="zutat4" name="zutaten">
+                                    <input type="text" class="zutaten" id="zutat5" name="zutaten">
+                                </div id="zutatenliste1">
+                                <div id="zutatenliste1">
+                                    <input type="text" class="zutaten" id="zutat6" name="zutaten">
+                                    <input type="text" class="zutaten" id="zutat7" name="zutaten">
+                                    <input type="text" class="zutaten" id="zutat8" name="zutaten">
+                                    <input type="text" class="zutaten" id="zutat9" name="zutaten">
+                                    <input type="text" class="zutaten" id="zutat10" name="zutaten">
+                                </div>
+                            </div>
                     </div>
-                    <div>
-                        <h3 class="unterueberschrift">Zubereitungsanweisung:</h1>
-                            <textarea id="zubereitungsanweisung" name="zubereitung" cols="35" rows="20"></textarea>
+                    <div id="zubereitung">
+                        <h3 class="unterueberschrift">Anleitung:</h1>
+                            <textarea id="zubereitungsanweisung" name="zubereitung"></textarea>
                     </div>
                 </form>
             </div>
@@ -72,6 +86,9 @@
             <div id="myRecipes"></div>
         </div>
     </div>
+
+
+
 
 </body>
 
