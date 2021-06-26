@@ -21,7 +21,7 @@ header {
 
 .logo {
     width: 150px;
-    padding-left: 150px;
+    padding-left: 130px;
 }
 
 .ueberschrift {
@@ -35,8 +35,6 @@ header {
     line-height: 35px;
     font-size: 20px;
     color: rgb(233, 233, 233);
-    width: 510px;
-    margin-top: -20px;
 }
 
 .unterueberschrift {
@@ -50,7 +48,7 @@ header {
 
 .menueContainer {
     position: absolute;
-    right: 130px;
+    right: 100px;
 }
 
 .menue {
@@ -75,7 +73,7 @@ a {
 .menuepunkt a {
     font-size: 16px;
     color: #6d6d6d;
-    padding: 50px;
+    padding: 40px;
     font-weight: 500;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     transition: 0.3s ease-out;
@@ -86,33 +84,47 @@ a {
     transition: 0.3s ease-in;
 }
 
+.menuepunktIcon {
+    display: none;
+}
+
+
+/*Startseite*/
+
 .ebenenContainer {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 30px;
-    width: 100%;
-    height: 100%;
 }
 
-.ebene1 {
+.ebeneHeader {
     display: flex;
     flex-direction: row-reverse;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+    height: 100%;
     width: 80%;
     background-color: #eca900;
 }
 
-.ebene1Bild {
+.headerBild {
     width: 50%;
 }
 
 .textContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
-    margin-top: 80px;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textContainer .textkoerper {
+    margin-top: -20px;
 }
 
 .buttonContainer {
@@ -140,6 +152,9 @@ a {
     background-color: rgb(41, 41, 41);
     transition: 0.3s ease-in;
 }
+
+
+/*Meine Rezepte*/
 
 .ebeneRezepteErstellen {
     margin-left: auto;
@@ -243,4 +258,117 @@ input:focus {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(32, 32, 32);
     border-radius: 5px;
+}
+
+@media screen and (max-width: 1300px) {
+    /*Globale Komponenten*/
+    .logo {
+        padding-left: 50px;
+    }
+    .menueContainer {
+        right: 40px;
+    }
+    /*Startseite*/
+    .ebeneHeader {
+        width: 90%;
+    }
+    .menuepunkt a {
+        padding: 25px;
+    }
+    .textContainer {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .textContainer .ueberschrift {
+        font-size: 40px;
+        margin-top: 0px;
+    }
+    .textContainer .textkoerper {
+        margin-top: -10px;
+        line-height: 30px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    /*Globale Komponenten*/
+    .logo {
+        padding-left: 20px;
+    }
+    .menueContainer {
+        right: 10px;
+    }
+    .menuepunkt a {
+        padding: 25px;
+    }
+    /*Startseite*/
+    .ebeneHeader {
+        width: 95%;
+    }
+    .textContainer {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .textContainer .ueberschrift {
+        font-size: 30px;
+        margin-top: 0px;
+    }
+    .textContainer .textkoerper {
+        font-size: 18px;
+        line-height: 25px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .menuepunkt a {
+        font-size: 14px;
+        padding: 10px;
+    }
+    /*Startseite*/
+    .textContainer {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .textContainer .ueberschrift {
+        font-size: 25px;
+    }
+    .textContainer .textkoerper {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: -5px;
+    }
+    .button {
+        font-size: 12px;
+        padding: 8px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .menuepunktIcon {
+        display: block;
+        width: 20px;
+    }
+    .logo {
+        width: 120px;
+    }
+    .menuepunktIcon {
+        width: 18px;
+        padding: 12px;
+    }
+    .menuetext {
+        display: none;
+    }
+    /*Startseite*/
+    .ebeneHeader {
+        flex-direction: column-reverse;
+    }
+    .headerBild {
+        width: 100%;
+    }
+    .textContainer {
+        width: 90%;
+    }
+    .textContainer .textkoerper {
+        display: block;
+    }
 }
