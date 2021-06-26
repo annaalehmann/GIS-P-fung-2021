@@ -94,7 +94,7 @@ export namespace pruefungsabgabe {
       }
 
       if (pathname == "/publishAllRecipes") {
-        response.write(rezepteDaten.find().toArray());
+        response.write(JSON.stringify(await rezepteDaten.find().toArray()));
         console.log("Alle Rezepte werden angezeigt");
       }
 

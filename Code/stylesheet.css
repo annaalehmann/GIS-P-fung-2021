@@ -153,6 +153,20 @@ a {
 }
 
 
+/*Alle Rezepte einsehen*/
+
+.ebeneAlleRezepte {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background-color: #202020;
+}
+
+
 /*Meine Rezepte*/
 
 .ebeneRezepteErstellen {

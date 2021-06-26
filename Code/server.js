@@ -65,7 +65,7 @@ var pruefungsabgabe;
                 console.log("Alle Rezepte des Autors werden angezeigt");
             }
             if (pathname == "/publishAllRecipes") {
-                response.write(rezepteDaten.find().toArray());
+                response.write(JSON.stringify(await rezepteDaten.find().toArray()));
                 console.log("Alle Rezepte werden angezeigt");
             }
             response.end();
