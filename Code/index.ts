@@ -1,5 +1,11 @@
 namespace pruefungsabgabe {
 
+    interface Rezepte {
+        zutaten: string;
+        zubereitung: string;
+        autor: string;
+    }
+
     let rezeptArray: Rezepte[];
 
     handlePublishAllRecipes();
@@ -39,5 +45,6 @@ namespace pruefungsabgabe {
             autor.innerHTML = "Autor: " + rezeptArray[i].autor;
             div.appendChild(autor);
         }
-
     }
+
+ }
