@@ -88,7 +88,7 @@ export namespace pruefungsabgabe {
       }
 
       if (pathname == "/publishMyRecipe") {
-        response.write(JSON.stringify(await rezepteDaten.find({"autor": nutzerArray.nutzername}).toArray()));
+        response.write(JSON.stringify(await rezepteDaten.find({ "autor": nutzerArray.nutzername }).toArray()));
         console.log("Alle Rezepte des Autors werden angezeigt");
       }
 
@@ -97,7 +97,13 @@ export namespace pruefungsabgabe {
         console.log("Alle Rezepte werden angezeigt");
       }
 
-      response.end();
+      if (pathname == "/delete") {
+
+        console.log("Rezept gelöscht");
+      }
     }
+
+    response.end();
   }
 }
+

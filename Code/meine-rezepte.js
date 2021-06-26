@@ -39,7 +39,18 @@ var pruefungsabgabe;
             let autor = document.createElement("p");
             autor.innerHTML = "Autor: " + rezeptArray[i].autor;
             div.appendChild(autor);
+            let button = document.createElement("button");
+            button.innerHTML = "löschen";
+            button.classList.add("buttonRezepte");
+            div.appendChild(button);
+            button.addEventListener("click", handleRezeptLoeschen);
         }
+    }
+    async function handleRezeptLoeschen(_event) {
+        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
+        let _url = "http://localhost:8100";
+        _url += "/deleteMyRecipe" + "?";
+        await fetch(_url);
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
 //# sourceMappingURL=meine-rezepte.js.map

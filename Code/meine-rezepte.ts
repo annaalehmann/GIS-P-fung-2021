@@ -59,6 +59,20 @@ namespace pruefungsabgabe {
             let autor: HTMLElement = document.createElement("p");
             autor.innerHTML = "Autor: " + rezeptArray[i].autor;
             div.appendChild(autor);
+
+            let button: HTMLElement = document.createElement("button");
+            button.innerHTML = "löschen";
+            button.classList.add("buttonRezepte");
+            div.appendChild(button);
+            button.addEventListener("click", handleRezeptLoeschen);
         }
     }
+
+    async function handleRezeptLoeschen(_event: Event): Promise<void> {
+        
+        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
+        let _url: string = "http://localhost:8100";
+        _url += "/deleteMyRecipe" + "?";
+        await fetch(_url);
+      }
 }

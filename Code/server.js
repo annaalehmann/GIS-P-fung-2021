@@ -68,8 +68,11 @@ var pruefungsabgabe;
                 response.write(JSON.stringify(await rezepteDaten.find().toArray()));
                 console.log("Alle Rezepte werden angezeigt");
             }
-            response.end();
+            if (pathname == "/delete") {
+                console.log("Rezept gelöscht");
+            }
         }
+        response.end();
     }
 })(pruefungsabgabe = exports.pruefungsabgabe || (exports.pruefungsabgabe = {}));
 //# sourceMappingURL=server.js.map
