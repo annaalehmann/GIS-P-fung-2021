@@ -4,11 +4,11 @@ var pruefungsabgabe;
     let rezeptArray;
     let publishButton = document.getElementById("publish");
     publishButton.addEventListener("click", handleInsert);
+    let formData = new FormData(document.forms[0]);
+    let query = new URLSearchParams(formData);
     handlePublishMyRecipes();
     //Rezept in Datenbank einfügen
     async function handleInsert() {
-        let formData = new FormData(document.forms[0]);
-        let query = new URLSearchParams(formData);
         let _url = "http://localhost:8100";
         _url += "/insertRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
         await fetch(_url);
@@ -16,11 +16,9 @@ var pruefungsabgabe;
     }
     //Rezepte des Nutzers anzeigen
     async function handlePublishMyRecipes() {
-        let formData = new FormData(document.forms[0]);
-        let query = new URLSearchParams(formData);
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url = "http://localhost:8100";
-        _url += "/publishMyRecipe" + "?" + query.toString();
+        _url += "/publishMyRecipe";
         let response = await fetch(_url);
         let responseJSON = await response.json();
         rezeptArray = JSON.parse(JSON.stringify(responseJSON));

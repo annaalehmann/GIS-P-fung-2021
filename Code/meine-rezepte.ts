@@ -8,16 +8,17 @@ namespace pruefungsabgabe {
 
     let rezeptArray: Rezepte[];
 
-
     let publishButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("publish");
     publishButton.addEventListener("click", handleInsert);
+
+    let formData: FormData = new FormData(document.forms[0]);
+    let query: URLSearchParams = new URLSearchParams(<any>formData);
     
     handlePublishMyRecipes();
 
     //Rezept in Datenbank einfügen
     async function handleInsert(): Promise<void> {
-        let formData: FormData = new FormData(document.forms[0]);
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
+      
         let _url: string = "http://localhost:8100";
         _url += "/insertRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
         await fetch(_url);
@@ -27,13 +28,10 @@ namespace pruefungsabgabe {
 
     //Rezepte des Nutzers anzeigen
     async function handlePublishMyRecipes(): Promise<void> {
-       
-        let formData: FormData = new FormData(document.forms[0]);
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
         
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
-        _url += "/publishMyRecipe" + "?" + query.toString();
+        _url += "/publishMyRecipe";
 
         let response: Response = await fetch(_url);
         let responseJSON: string = await response.json();
