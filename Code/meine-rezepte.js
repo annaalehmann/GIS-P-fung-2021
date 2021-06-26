@@ -47,10 +47,13 @@ var pruefungsabgabe;
         }
     }
     async function handleRezeptLoeschen(_event) {
+        let i = _event.target?.getAttribute("zaehler");
+        document.getElementById("currentRecipeDiv" + i)?.remove();
         /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url = "http://localhost:8100";
-        _url += "/deleteMyRecipe" + "?";
+        _url += "/deleteMyRecipe";
         await fetch(_url);
+        location.reload();
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
 //# sourceMappingURL=meine-rezepte.js.map

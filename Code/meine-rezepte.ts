@@ -70,9 +70,15 @@ namespace pruefungsabgabe {
 
     async function handleRezeptLoeschen(_event: Event): Promise<void> {
         
+        let i: string = (<HTMLDivElement>_event.target)?.getAttribute("zaehler")!;
+        document.getElementById("currentRecipeDiv" + i)?.remove();
+
+       
         /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
-        _url += "/deleteMyRecipe" + "?";
+        _url += "/deleteMyRecipe";
         await fetch(_url);
+
+        location.reload();
       }
 }
