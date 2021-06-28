@@ -36,6 +36,10 @@ var pruefungsabgabe;
     async function handleFavorisieren(_event) {
         let i = _event.currentTarget.parentElement.getAttribute("counter");
         let iNr = parseInt(i);
+        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
+        let _url = "http://localhost:8100";
+        _url += "/favorite" + "?" + "counter=" + iNr;
+        await fetch(_url);
         localStorage.setItem("zutaten", rezeptArray[iNr].zutaten);
         localStorage.setItem("zubereitung", rezeptArray[iNr].zubereitung);
         localStorage.setItem("autor", rezeptArray[iNr].autor);

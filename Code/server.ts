@@ -103,8 +103,14 @@ export namespace pruefungsabgabe {
         let counter: number = parseFloat(JSON.stringify(url.query).replace(/\D/g, ""));
         rezepteDaten.deleteOne(rezepte[counter]);
         console.log("Rezept gelöscht");
+      }
 
-        
+      if (pathname == "/favorite") {
+
+        let rezepte: String[] = await rezepteDaten.find({}).toArray();
+        let counter: number = parseFloat(JSON.stringify(url.query));
+        response.write(JSON.stringify(await rezepteDaten.find(rezepte[counter]).toArray()));
+        console.log("Rezept favorisiert");
       }
 
       response.end();

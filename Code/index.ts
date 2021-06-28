@@ -14,7 +14,7 @@ namespace pruefungsabgabe {
 
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
-        _url += "/publishAllRecipes"; 
+        _url += "/publishAllRecipes";
 
         let response: Response = await fetch(_url);
         let responseJSON: string = await response.json();
@@ -54,11 +54,16 @@ namespace pruefungsabgabe {
 
         let i: string = (<HTMLElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("counter")!;
         let iNr: number = parseInt(i);
-        
+
+        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
+        let _url: string = "http://localhost:8100";
+        _url += "/favorite" + "?" + "counter=" + iNr;
+        await fetch(_url);
+
         localStorage.setItem("zutaten", rezeptArray[iNr].zutaten);
         localStorage.setItem("zubereitung", rezeptArray[iNr].zubereitung);
         localStorage.setItem("autor", rezeptArray[iNr].autor);
 
         console.log(localStorage);
-      }
+    }
 }
