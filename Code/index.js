@@ -4,7 +4,7 @@ var pruefungsabgabe;
     let rezeptArray;
     handlePublishAllRecipes();
     if (!localStorage.counter) {
-        localStorage.counter = 0;
+        localStorage.counter = 1;
     }
     async function handlePublishAllRecipes() {
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
@@ -39,7 +39,7 @@ var pruefungsabgabe;
     async function handleFavorisieren(_event) {
         let i = _event.currentTarget.parentElement.getAttribute("counter");
         let iNr = parseInt(i);
-        localStorage.counter = localStorage.counter + 1;
+        localStorage.counter = Number(localStorage.counter) + 1;
         localStorage.setItem("zutaten" + localStorage.counter, rezeptArray[iNr].zutaten);
         localStorage.setItem("zubereitung" + localStorage.counter, rezeptArray[iNr].zubereitung);
         localStorage.setItem("autor" + localStorage.counter, rezeptArray[iNr].autor);
