@@ -1,9 +1,8 @@
 "use strict";
 var pruefungsabgabe;
 (function (pruefungsabgabe) {
-    let rezeptArray;
-    document.getElementById("allRecipes").innerHTML = "";
-    for (let i = 0; i < rezeptArray.length; i++) {
+    document.getElementById("favoriteRecipes").innerHTML = "";
+    for (let i = 0; i < localStorage.counter.length; i++) {
         let div = document.createElement("div");
         div.id = "currentRecipeDiv" + i;
         div.classList.add("currentRecipeClass");

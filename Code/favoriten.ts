@@ -1,16 +1,8 @@
 namespace pruefungsabgabe {
 
-    interface Rezepte {
-        zutaten: string;
-        zubereitung: string;
-        autor: string;
-    }
+    document.getElementById("favoriteRecipes").innerHTML = "";
 
-    let rezeptArray: Rezepte[];
-
-    document.getElementById("allRecipes").innerHTML = "";
-
-    for (let i: number = 0; i < rezeptArray.length; i++) {
+    for (let i: number = 0; i < localStorage.counter.length; i++) {
 
         let div: HTMLDivElement = document.createElement("div");
         div.id = "currentRecipeDiv" + i;
