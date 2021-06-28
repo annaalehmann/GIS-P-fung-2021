@@ -69,7 +69,7 @@ var pruefungsabgabe;
                 console.log("Alle Rezepte werden angezeigt");
             }
             if (pathname == "/deleteMyRecipe") {
-                let rezepte = await rezepteDaten.find().toArray();
+                let rezepte = await rezepteDaten.find({ "autor": nutzerArray.nutzername }).toArray();
                 for (let i = 0; i < rezepte.length; i++) {
                     JSON.stringify(rezepteDaten.deleteOne(rezepte));
                     console.log("Rezept gelöscht");

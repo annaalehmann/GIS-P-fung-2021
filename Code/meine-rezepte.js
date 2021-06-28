@@ -4,11 +4,11 @@ var pruefungsabgabe;
     let rezeptArray;
     let publishButton = document.getElementById("publish");
     publishButton.addEventListener("click", handleInsert);
-    let formData = new FormData(document.forms[0]);
-    let query = new URLSearchParams(formData);
     handlePublishMyRecipes();
     //Rezept in Datenbank einfügen
     async function handleInsert() {
+        let formData = new FormData(document.forms[0]);
+        let query = new URLSearchParams(formData);
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url = "http://localhost:8100";
         _url += "/insertRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
@@ -28,7 +28,7 @@ var pruefungsabgabe;
             let div = document.createElement("div");
             div.id = "currentRecipeDiv" + i;
             div.classList.add("currentRecipeClass");
-            div.setAttribute("zaehler", i.toString());
+            div.setAttribute("counter", i.toString());
             document.getElementById("myRecipes").appendChild(div);
             let zutaten = document.createElement("p");
             zutaten.innerHTML = "Zutaten: " + rezeptArray[i].zutaten;
@@ -47,13 +47,12 @@ var pruefungsabgabe;
         }
     }
     async function handleRezeptLoeschen(_event) {
-        let i = _event.target?.getAttribute("zaehler");
+        let i = _event.target?.getAttribute("counter");
         document.getElementById("currentRecipeDiv" + i)?.remove();
         /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url = "http://localhost:8100";
-        _url += "/deleteMyRecipe";
+        _url += "/deleteMyRecipe" + "?" + i;
         await fetch(_url);
-        location.reload();
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
 //# sourceMappingURL=meine-rezepte.js.map
