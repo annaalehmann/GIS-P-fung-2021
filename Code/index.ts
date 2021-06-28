@@ -27,7 +27,7 @@ namespace pruefungsabgabe {
             let div: HTMLDivElement = document.createElement("div");
             div.id = "currentRecipeDiv" + i;
             div.classList.add("currentRecipeClass");
-            div.setAttribute("zaehler", i.toString());
+            div.setAttribute("counter", i.toString());
             document.getElementById("allRecipes").appendChild(div);
 
             let zutaten: HTMLElement = document.createElement("p");

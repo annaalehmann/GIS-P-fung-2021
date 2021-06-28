@@ -99,7 +99,7 @@ export namespace pruefungsabgabe {
 
       if (pathname == "/deleteMyRecipe") {
 
-        let rezepte: String[] = await rezepteDaten.find().toArray();
+        let rezepte: String[] = await rezepteDaten.find({ "autor": nutzerArray.nutzername }).toArray();
 
         for (let i: number = 0; i < rezepte.length; i++) {
           JSON.stringify(rezepteDaten.deleteOne(rezepte));
