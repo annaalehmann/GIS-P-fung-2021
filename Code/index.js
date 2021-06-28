@@ -4,7 +4,7 @@ var pruefungsabgabe;
     let rezeptArray;
     handlePublishAllRecipes();
     if (!localStorage.counter) {
-        localStorage.counter = 1;
+        localStorage.counter = 0;
     }
     async function handlePublishAllRecipes() {
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/

@@ -11,7 +11,7 @@ namespace pruefungsabgabe {
     handlePublishAllRecipes();
 
     if (!localStorage.counter) {
-        localStorage.counter = 1;
+        localStorage.counter = 0;
     }
 
     async function handlePublishAllRecipes(): Promise<void> {
