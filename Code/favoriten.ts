@@ -15,7 +15,7 @@ namespace pruefungsabgabe {
         div.appendChild(zutaten);
 
         let zubereitung: HTMLElement = document.createElement("p");
-        zutaten.innerHTML = "Zubereitung: " + localStorage.getItem("zubereitung" + i);
+        zubereitung.innerHTML = "Zubereitung: " + localStorage.getItem("zubereitung" + i);
         div.appendChild(zubereitung);
 
         let autor: HTMLElement = document.createElement("p");

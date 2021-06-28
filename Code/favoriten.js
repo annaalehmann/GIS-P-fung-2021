@@ -12,7 +12,7 @@ var pruefungsabgabe;
         zutaten.innerHTML = "Zutaten: " + localStorage.getItem("zutaten" + i);
         div.appendChild(zutaten);
         let zubereitung = document.createElement("p");
-        zutaten.innerHTML = "Zubereitung: " + localStorage.getItem("zubereitung" + i);
+        zubereitung.innerHTML = "Zubereitung: " + localStorage.getItem("zubereitung" + i);
         div.appendChild(zubereitung);
         let autor = document.createElement("p");
         autor.innerHTML = "Autor: " + localStorage.getItem("autor" + i);
