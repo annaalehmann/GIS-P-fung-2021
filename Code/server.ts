@@ -103,6 +103,8 @@ export namespace pruefungsabgabe {
         let counter: number = parseFloat(JSON.stringify(url.query).replace(/\D/g, ""));
         rezepteDaten.deleteOne(rezepte[counter]);
         console.log("Rezept gelöscht");
+
+        
       }
 
       response.end();
