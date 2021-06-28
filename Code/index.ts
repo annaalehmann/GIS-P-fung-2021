@@ -50,11 +50,15 @@ namespace pruefungsabgabe {
         }
     }
 
-    async function handleFavorisieren(): Promise<void> {
-        
-        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url: string = "http://localhost:8100";
-        await fetch(_url);
+    async function handleFavorisieren(_event: Event): Promise<void> {
 
+        let i: string = (<HTMLElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("counter")!;
+        let iNr: number = parseInt(i);
+        
+        localStorage.setItem("zutaten", rezeptArray[iNr].zutaten);
+        localStorage.setItem("zubereitung", rezeptArray[iNr].zubereitung);
+        localStorage.setItem("autor", rezeptArray[iNr].autor);
+
+        console.log(localStorage);
       }
 }

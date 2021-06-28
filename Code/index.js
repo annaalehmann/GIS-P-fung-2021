@@ -33,10 +33,13 @@ var pruefungsabgabe;
             button.addEventListener("click", handleFavorisieren);
         }
     }
-    async function handleFavorisieren() {
-        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url = "http://localhost:8100";
-        await fetch(_url);
+    async function handleFavorisieren(_event) {
+        let i = _event.currentTarget.parentElement.getAttribute("counter");
+        let iNr = parseInt(i);
+        localStorage.setItem("zutaten", rezeptArray[iNr].zutaten);
+        localStorage.setItem("zubereitung", rezeptArray[iNr].zubereitung);
+        localStorage.setItem("autor", rezeptArray[iNr].autor);
+        console.log(localStorage);
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
 //# sourceMappingURL=index.js.map
