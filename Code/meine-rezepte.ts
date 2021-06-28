@@ -21,7 +21,7 @@ namespace pruefungsabgabe {
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
 
-        /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
+        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
         _url += "/insertRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
         await fetch(_url);
@@ -32,7 +32,7 @@ namespace pruefungsabgabe {
     //Rezepte des Nutzers anzeigen
     async function handlePublishMyRecipes(): Promise<void> {
         
-        /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
+        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
         _url += "/publishMyRecipe";
 
@@ -72,12 +72,12 @@ namespace pruefungsabgabe {
 
     async function handleRezeptLoeschen(_event: Event): Promise<void> {
         
-        let i: string = (<HTMLDivElement>_event.target)?.getAttribute("counter")!;
+        let i: string = (<HTMLDivElement>_event.currentTarget)?.getAttribute("counter")!;
         document.getElementById("currentRecipeDiv" + i)?.remove();
        
         /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
-        _url += "/deleteMyRecipe" + "?" + i;
+        _url += "/deleteMyRecipe" + "?" + "counter=" + i;
         await fetch(_url);
 
       }

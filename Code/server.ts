@@ -100,11 +100,9 @@ export namespace pruefungsabgabe {
       if (pathname == "/deleteMyRecipe") {
 
         let rezepte: String[] = await rezepteDaten.find({ "autor": nutzerArray.nutzername }).toArray();
-
-        for (let i: number = 0; i < rezepte.length; i++) {
-          JSON.stringify(rezepteDaten.deleteOne(rezepte));
-          console.log("Rezept gelöscht");
-        }
+        let counter: number = parseFloat(JSON.stringify(url.query).replace(/\D/g, ""));
+        rezepteDaten.deleteOne(rezepte[counter]);
+        console.log("Rezept gelöscht");
       }
 
       response.end();
