@@ -2,7 +2,7 @@ namespace pruefungsabgabe {
 
     document.getElementById("favoriteRecipes").innerHTML = "";
 
-    for (let i: number = 0; i < localStorage.counter.length; i++) {
+    for (let i: number = 0; i < localStorage.counter; i++) {
 
         let div: HTMLDivElement = document.createElement("div");
         div.id = "currentRecipeDiv" + i;

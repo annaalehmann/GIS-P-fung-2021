@@ -2,7 +2,7 @@
 var pruefungsabgabe;
 (function (pruefungsabgabe) {
     document.getElementById("favoriteRecipes").innerHTML = "";
-    for (let i = 0; i < localStorage.counter.length; i++) {
+    for (let i = 0; i < localStorage.counter; i++) {
         let div = document.createElement("div");
         div.id = "currentRecipeDiv" + i;
         div.classList.add("currentRecipeClass");
