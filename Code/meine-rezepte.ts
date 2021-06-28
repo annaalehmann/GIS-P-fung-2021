@@ -78,6 +78,5 @@ namespace pruefungsabgabe {
         _url += "/deleteMyRecipe";
         await fetch(_url);
 
-        location.reload();
       }
 }
