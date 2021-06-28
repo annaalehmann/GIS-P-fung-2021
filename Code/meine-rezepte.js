@@ -47,7 +47,7 @@ var pruefungsabgabe;
         }
     }
     async function handleRezeptLoeschen(_event) {
-        let i = _event.currentTarget?.getAttribute("counter");
+        let i = _event.currentTarget.parentElement.getAttribute("counter");
         document.getElementById("currentRecipeDiv" + i)?.remove();
         /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url = "http://localhost:8100";

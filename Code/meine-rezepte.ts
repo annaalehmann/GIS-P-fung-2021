@@ -71,8 +71,8 @@ namespace pruefungsabgabe {
     }
 
     async function handleRezeptLoeschen(_event: Event): Promise<void> {
-        
-        let i: string = (<HTMLDivElement>_event.currentTarget)?.getAttribute("counter")!;
+
+        let i: string = (<HTMLElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("counter")!;
         document.getElementById("currentRecipeDiv" + i)?.remove();
        
         /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
