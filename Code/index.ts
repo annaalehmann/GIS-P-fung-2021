@@ -55,5 +55,6 @@ namespace pruefungsabgabe {
         /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
         await fetch(_url);
+
       }
 }
