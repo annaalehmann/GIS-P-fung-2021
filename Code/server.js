@@ -74,12 +74,6 @@ var pruefungsabgabe;
                 rezepteDaten.deleteOne(rezepte[counter]);
                 console.log("Rezept gelöscht");
             }
-            if (pathname == "/favorite") {
-                let rezepte = await rezepteDaten.find({}).toArray();
-                let counter = parseFloat(JSON.stringify(url.query));
-                response.write(JSON.stringify(await rezepteDaten.find(rezepte[counter]).toArray()));
-                console.log("Rezept favorisiert");
-            }
             response.end();
         }
     }
