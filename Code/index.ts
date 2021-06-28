@@ -59,10 +59,10 @@ namespace pruefungsabgabe {
         let i: string = (<HTMLElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("counter")!;
         let iNr: number = parseInt(i);
 
-        localStorage.counter = Number(localStorage.counter) + 1;
         localStorage.setItem("zutaten" + localStorage.counter, rezeptArray[iNr].zutaten);
         localStorage.setItem("zubereitung" + localStorage.counter, rezeptArray[iNr].zubereitung);
         localStorage.setItem("autor" + localStorage.counter, rezeptArray[iNr].autor);
+        localStorage.counter = Number(localStorage.counter) + 1;
 
         console.log(localStorage);
     }

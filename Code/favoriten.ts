@@ -1,8 +1,10 @@
 namespace pruefungsabgabe {
 
-    document.getElementById("favoriteRecipes").innerHTML = "";
+handleFavoriten(); 
 
-    for (let i: number = 1; i <= localStorage.counter; i++) {
+function handleFavoriten(): void {
+
+    for (let i: number = 0; i < localStorage.counter; i++) {
 
         let div: HTMLDivElement = document.createElement("div");
         div.id = "currentRecipeDiv" + i;
@@ -27,5 +29,5 @@ namespace pruefungsabgabe {
         button.classList.add("buttonRezepte");
         div.appendChild(button);
     }
-
+}
 }
