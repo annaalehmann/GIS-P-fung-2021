@@ -90,10 +90,20 @@ namespace pruefungsabgabe {
 
     async function handleRezeptBearbeiten(_event: Event): Promise<void> {
 
+        let i: string = (<HTMLElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("counter")!;
+        let iNr: number = parseInt(i);
+
+        document.getElementById("zutatenlisteEdit1").innerHTML = "";
+        document.getElementById("zutatenlisteEdit2").innerHTML = "";
+        document.getElementById("zubereitungBearbeiten").innerHTML = "";
+        document.getElementById("buttonBearbeitenContainer").innerHTML = "";
+
+
+
         for (let i: number = 0; i < 5; i++) {
             let zutatenliste: HTMLInputElement = document.createElement("input");
             zutatenliste.setAttribute("type", "text");
-            zutatenliste.value = "abc"; 
+            zutatenliste.value = rezeptArray[iNr].zutaten[i]; 
    
             document.getElementById("zutatenlisteEdit1").appendChild(zutatenliste);
         }
@@ -102,20 +112,20 @@ namespace pruefungsabgabe {
             let zutatenliste: HTMLInputElement = document.createElement("input");
             zutatenliste.setAttribute("type", "text");
             document.getElementById("zutatenlisteEdit2").appendChild(zutatenliste);
-            zutatenliste.value = "abc";
+            zutatenliste.value = rezeptArray[iNr].zutaten[i]; 
         }
 
         let zubereitung: HTMLTextAreaElement = document.createElement("textarea");
         zubereitung.setAttribute("type", "text");
-        document.getElementById("zubereitungEdit").appendChild(zubereitung);
+        document.getElementById("zubereitungBearbeiten").appendChild(zubereitung);
         zubereitung.id = "zubereitung";
-        zubereitung.value = "abc";
+        zubereitung.value = rezeptArray[iNr].zubereitung; 
      
 
         let buttonUpdate: HTMLElement = document.createElement("button");
         buttonUpdate.innerHTML = "aktualisieren";
-        document.getElementById("editRecipes").appendChild(buttonUpdate);
-        buttonUpdate.id = "buttonUpdate";
+        document.getElementById("buttonBearbeitenContainer").appendChild(buttonUpdate);
+        buttonUpdate.id = "button";
 
     }
 }

@@ -60,27 +60,33 @@ var pruefungsabgabe;
         await fetch(_url);
     }
     async function handleRezeptBearbeiten(_event) {
+        let i = _event.currentTarget.parentElement.getAttribute("counter");
+        let iNr = parseInt(i);
+        document.getElementById("zutatenlisteEdit1").innerHTML = "";
+        document.getElementById("zutatenlisteEdit2").innerHTML = "";
+        document.getElementById("zubereitungBearbeiten").innerHTML = "";
+        document.getElementById("buttonBearbeitenContainer").innerHTML = "";
         for (let i = 0; i < 5; i++) {
             let zutatenliste = document.createElement("input");
             zutatenliste.setAttribute("type", "text");
-            zutatenliste.value = "abc";
+            zutatenliste.value = rezeptArray[iNr].zutaten[i];
             document.getElementById("zutatenlisteEdit1").appendChild(zutatenliste);
         }
         for (let i = 5; i < 10; i++) {
             let zutatenliste = document.createElement("input");
             zutatenliste.setAttribute("type", "text");
             document.getElementById("zutatenlisteEdit2").appendChild(zutatenliste);
-            zutatenliste.value = "abc";
+            zutatenliste.value = rezeptArray[iNr].zutaten[i];
         }
         let zubereitung = document.createElement("textarea");
         zubereitung.setAttribute("type", "text");
-        document.getElementById("zubereitungEdit").appendChild(zubereitung);
+        document.getElementById("zubereitungBearbeiten").appendChild(zubereitung);
         zubereitung.id = "zubereitung";
-        zubereitung.value = "abc";
+        zubereitung.value = rezeptArray[iNr].zubereitung;
         let buttonUpdate = document.createElement("button");
         buttonUpdate.innerHTML = "aktualisieren";
-        document.getElementById("editRecipes").appendChild(buttonUpdate);
-        buttonUpdate.id = "buttonUpdate";
+        document.getElementById("buttonBearbeitenContainer").appendChild(buttonUpdate);
+        buttonUpdate.id = "button";
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
 //# sourceMappingURL=meine-rezepte.js.map
