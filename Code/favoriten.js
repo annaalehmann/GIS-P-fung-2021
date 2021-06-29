@@ -19,7 +19,7 @@ var pruefungsabgabe;
             autor.innerHTML = "Autor: " + localStorage.getItem("autor" + i);
             div.appendChild(autor);
             let button = document.createElement("button");
-            button.innerHTML = "löschen";
+            button.innerHTML = "entfernen";
             button.classList.add("buttonRezepte");
             div.appendChild(button);
         }

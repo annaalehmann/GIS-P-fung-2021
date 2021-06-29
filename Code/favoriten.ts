@@ -25,7 +25,7 @@ function handleFavoriten(): void {
         div.appendChild(autor);
 
         let button: HTMLElement = document.createElement("button");
-        button.innerHTML = "löschen";
+        button.innerHTML = "entfernen";
         button.classList.add("buttonRezepte");
         div.appendChild(button);
     }
