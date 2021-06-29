@@ -46,4 +46,4 @@ var pruefungsabgabe;
         console.log(localStorage);
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=alle-rezepte.js.map
