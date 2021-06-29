@@ -28,6 +28,12 @@ function handleFavoriten(): void {
         button.innerHTML = "entfernen";
         button.classList.add("buttonRezepte");
         div.appendChild(button);
+        button.addEventListener("click", handleDelete);
     }
+}
+
+function handleDelete(_event: Event): void {
+    let i: string = (<HTMLElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("counter")!;
+    document.getElementById("currentRecipeDiv" + i)?.remove(); 
 }
 }

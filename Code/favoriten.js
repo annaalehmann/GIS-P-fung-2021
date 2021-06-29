@@ -22,7 +22,12 @@ var pruefungsabgabe;
             button.innerHTML = "entfernen";
             button.classList.add("buttonRezepte");
             div.appendChild(button);
+            button.addEventListener("click", handleDelete);
         }
+    }
+    function handleDelete(_event) {
+        let i = _event.currentTarget.parentElement.getAttribute("counter");
+        document.getElementById("currentRecipeDiv" + i)?.remove();
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
 //# sourceMappingURL=favoriten.js.map
