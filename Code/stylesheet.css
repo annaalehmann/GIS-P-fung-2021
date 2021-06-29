@@ -235,11 +235,13 @@ footer .textkoerper {
 
 /*Startseite*/
 
-.ebeneHeaderStartseite {
+.ebeneHeaderStartseite,
+.ebeneHeaderFavoriten {
     flex-direction: row-reverse;
 }
 
-.headerBildStartseite {
+.headerBildStartseite,
+.headerBildFavoriten {
     width: 50%;
 }
 
@@ -466,7 +468,8 @@ input:focus {
     .ebeneAlleRezepte,
     .ebeneRezepteErstellen,
     .ebeneMeineRezepte,
-    #ebeneRezeptBearbeiten {
+    #ebeneRezeptBearbeiten,
+    .ebeneHeaderFavoriten {
         width: 90%;
     }
     /*Startseite*/
@@ -512,7 +515,8 @@ input:focus {
     .ebeneRezepteErstellen,
     .ebeneMeineRezepte,
     .ebeneAlleRezepte,
-    #ebeneRezeptBearbeiten {
+    #ebeneRezeptBearbeiten,
+    .ebeneHeaderFavoriten {
         width: 95%;
     }
     /*Startseite*/
@@ -640,10 +644,12 @@ input:focus {
         width: 120px;
     }
     /*Startseite*/
-    .ebeneHeaderStartseite {
+    .ebeneHeaderStartseite,
+    .ebeneHeaderFavoriten {
         flex-direction: column-reverse;
     }
-    .headerBildStartseite {
+    .headerBildStartseite,
+    .headerBildFavoriten {
         width: 100%;
     }
     .textContainer {
