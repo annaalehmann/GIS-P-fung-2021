@@ -87,30 +87,56 @@ namespace pruefungsabgabe {
         await fetch(_url);
     }
 
+
     async function handleRezeptBearbeiten(_event: Event): Promise<void> {
-        
-        let div: HTMLDivElement = document.createElement("div");
-        div.id = "editCurrentRecipeDiv";
-        div.classList.add("editCurrentRecipeClass");
-        document.getElementById("editRecipes").appendChild(div);
 
-        let ueberschrift: HTMLElement = document.createElement("p");
-        ueberschrift.innerHTML = "Bearbeitungsmodus";
-        ueberschrift.classList.add("ueberschrift");
-        ueberschrift.appendChild(ueberschrift);
+        for (let i: number = 0; i < 5; i++) {
+            let zutatenliste: HTMLInputElement = document.createElement("input");
+            zutatenliste.setAttribute("type", "text");
+            zutatenliste.value = "abc"; 
+   
+            document.getElementById("zutatenlisteEdit1").appendChild(zutatenliste);
+        }
 
-        let zutatenliste: HTMLElement = document.createElement("input");
-        zutatenliste.setAttribute("type", "text");
-        div.appendChild(zutatenliste);
+        for (let i: number = 5; i < 10; i++) {
+            let zutatenliste: HTMLInputElement = document.createElement("input");
+            zutatenliste.setAttribute("type", "text");
+            document.getElementById("zutatenlisteEdit2").appendChild(zutatenliste);
+            zutatenliste.value = "abc";
+        }
 
-        let zubereitung: HTMLElement = document.createElement("textarea");
+        let zubereitung: HTMLTextAreaElement = document.createElement("textarea");
         zubereitung.setAttribute("type", "text");
-        div.appendChild(zubereitung);
+        document.getElementById("zubereitungEdit").appendChild(zubereitung);
+        zubereitung.id = "zubereitung";
+        zubereitung.value = "abc";
+     
 
         let buttonUpdate: HTMLElement = document.createElement("button");
         buttonUpdate.innerHTML = "aktualisieren";
-        buttonUpdate.classList.add("buttonRezepte");
-        div.appendChild(buttonUpdate);
+        document.getElementById("editRecipes").appendChild(buttonUpdate);
+        buttonUpdate.id = "buttonUpdate";
+
+
+        for (let i: number = 0; i < rezeptArray.length; i++) {
+    
+            let zutaten: HTMLElement = document.getElementById("zutaten");
+      
+    
+            let zubereitung: HTMLElement = document.createElement("p");
+            zubereitung.innerHTML = "Zubereitung: " + localStorage.getItem("zubereitung" + i);
+            div.appendChild(zubereitung);
+    
+            let autor: HTMLElement = document.createElement("p");
+            autor.innerHTML = "Autor: " + localStorage.getItem("autor" + i);
+            div.appendChild(autor);
+    
+            let button: HTMLElement = document.createElement("button");
+            button.innerHTML = "entfernen";
+            button.classList.add("buttonRezepte");
+            div.appendChild(button);
+            button.addEventListener("click", handleDelete);
+        }
 
     }
 }

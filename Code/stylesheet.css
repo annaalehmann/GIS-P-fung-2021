@@ -335,8 +335,8 @@ input:focus {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    padding-bottom: 50px;
-    background-color: #4a6314af;
+    padding-bottom: 0px;
+    background-color: rgb(131, 148, 94);
 }
 
 .textContainerRezepte {
@@ -392,6 +392,67 @@ input:focus {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+}
+
+#ebeneRezeptBearbeiten {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-top: -5px;
+    background-color: rgb(131, 148, 94);
+}
+
+#editRecipes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#editRecipeform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+#zubereitungEdit {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+#zubereitungEdit textarea {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    padding: 20px;
+    height: 130px;
+    width: 75%;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 800;
+    color: rgba(46, 46, 46, 0.884);
+    font-size: 16px;
+    line-height: 25px;
+}
+
+#zutatenlisteEdit {
+    display: flex;
+    flex-direction: row;
+}
+
+#zutatenlisteEdit1,
+#zutatenlisteEdit2 {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    margin-left: 20px;
 }
 
 @media screen and (max-width: 1300px) {

@@ -60,24 +60,41 @@ var pruefungsabgabe;
         await fetch(_url);
     }
     async function handleRezeptBearbeiten(_event) {
-        let div = document.createElement("div");
-        div.id = "editCurrentRecipeDiv";
-        div.classList.add("editCurrentRecipeClass");
-        document.getElementById("editRecipes").appendChild(div);
-        let ueberschrift = document.createElement("p");
-        ueberschrift.innerHTML = "Bearbeitungsmodus";
-        ueberschrift.classList.add("ueberschrift");
-        ueberschrift.appendChild(ueberschrift);
-        let zutatenliste = document.createElement("input");
-        zutatenliste.setAttribute("type", "text");
-        div.appendChild(zutatenliste);
+        for (let i = 0; i < 5; i++) {
+            let zutatenliste = document.createElement("input");
+            zutatenliste.setAttribute("type", "text");
+            zutatenliste.value = "abc";
+            document.getElementById("zutatenlisteEdit1").appendChild(zutatenliste);
+        }
+        for (let i = 5; i < 10; i++) {
+            let zutatenliste = document.createElement("input");
+            zutatenliste.setAttribute("type", "text");
+            document.getElementById("zutatenlisteEdit2").appendChild(zutatenliste);
+            zutatenliste.value = "abc";
+        }
         let zubereitung = document.createElement("textarea");
         zubereitung.setAttribute("type", "text");
-        div.appendChild(zubereitung);
+        document.getElementById("zubereitungEdit").appendChild(zubereitung);
+        zubereitung.id = "zubereitung";
+        zubereitung.value = "abc";
         let buttonUpdate = document.createElement("button");
         buttonUpdate.innerHTML = "aktualisieren";
-        buttonUpdate.classList.add("buttonRezepte");
-        div.appendChild(buttonUpdate);
+        document.getElementById("editRecipes").appendChild(buttonUpdate);
+        buttonUpdate.id = "buttonUpdate";
+        for (let i = 0; i < rezeptArray.length; i++) {
+            let zutaten = document.getElementById("zutaten");
+            let zubereitung = document.createElement("p");
+            zubereitung.innerHTML = "Zubereitung: " + localStorage.getItem("zubereitung" + i);
+            div.appendChild(zubereitung);
+            let autor = document.createElement("p");
+            autor.innerHTML = "Autor: " + localStorage.getItem("autor" + i);
+            div.appendChild(autor);
+            let button = document.createElement("button");
+            button.innerHTML = "entfernen";
+            button.classList.add("buttonRezepte");
+            div.appendChild(button);
+            button.addEventListener("click", handleDelete);
+        }
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
 //# sourceMappingURL=meine-rezepte.js.map
