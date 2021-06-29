@@ -578,8 +578,12 @@ input:focus {
 @media screen and (max-width: 720px) {
     /*Typografie*/
     .menuetext {
-        font-size: 14px;
-        padding: 10px;
+        display: none;
+    }
+    .menuepunktIcon img {
+        display: block;
+        width: 18px;
+        padding: 12px;
     }
     .ueberschrift {
         font-size: 25px;
@@ -587,6 +591,9 @@ input:focus {
     .textkoerper {
         font-size: 14px;
         line-height: 20px;
+    }
+    .logo {
+        width: 120px;
     }
     /*Globale Styles*/
     .button,
@@ -631,18 +638,6 @@ input:focus {
 }
 
 @media screen and (max-width: 600px) {
-    /*Globale Styles*/
-    .menuepunktIcon img {
-        display: block;
-        width: 18px;
-        padding: 12px;
-    }
-    .menuetext {
-        display: none;
-    }
-    .logo {
-        width: 120px;
-    }
     /*Startseite*/
     .ebeneHeaderStartseite,
     .ebeneHeaderFavoriten {
