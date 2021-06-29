@@ -28,12 +28,19 @@ var pruefungsabgabe;
     }
     function handleDelete(_event) {
         let i = _event.currentTarget.parentElement.getAttribute("counter");
+        let iNr = parseInt(i);
+        let iPlusOne = 0;
         document.getElementById("currentRecipeDiv" + i)?.remove();
         localStorage.counter--;
         localStorage.removeItem("zutaten" + i);
         localStorage.removeItem("zubereitung" + i);
         localStorage.removeItem("autor" + i);
-        console.log(localStorage);
+        for (iNr; iNr < localStorage.counter; iNr++) {
+            iPlusOne = iNr + 1;
+            localStorage.setItem("zutaten" + iNr, localStorage.getItem("zutaten" + iPlusOne));
+            localStorage.setItem("zubereitung" + iNr, localStorage.getItem("zubereitung" + iPlusOne));
+            localStorage.setItem("autor" + iNr, localStorage.getItem("autor" + iPlusOne));
+        }
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
 //# sourceMappingURL=favoriten.js.map

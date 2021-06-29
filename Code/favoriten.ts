@@ -1,7 +1,7 @@
 namespace pruefungsabgabe {
 
 handleFavoriten();
-console.log(localStorage) ;
+console.log(localStorage);
 
 function handleFavoriten(): void {
 
@@ -36,6 +36,8 @@ function handleFavoriten(): void {
 function handleDelete(_event: Event): void {
 
     let i: string = (<HTMLElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("counter")!;
+    let iNr: number = parseInt(i);
+    let iPlusOne: number = 0; 
     document.getElementById("currentRecipeDiv" + i)?.remove(); 
 
     localStorage.counter--;
@@ -43,6 +45,11 @@ function handleDelete(_event: Event): void {
     localStorage.removeItem("zubereitung" + i);
     localStorage.removeItem("autor" + i);
 
-    console.log(localStorage);
+    for (iNr; iNr < localStorage.counter; iNr++) {
+        iPlusOne = iNr + 1; 
+        localStorage.setItem("zutaten" + iNr, localStorage.getItem("zutaten" + iPlusOne));
+        localStorage.setItem("zubereitung" + iNr, localStorage.getItem("zubereitung" + iPlusOne));
+        localStorage.setItem("autor" + iNr, localStorage.getItem("autor" + iPlusOne));
+    }
 }
 }

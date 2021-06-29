@@ -7,23 +7,6 @@ body {
     margin: 0px;
 }
 
-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.178);
-}
-
-.logo {
-    width: 150px;
-    padding-left: 130px;
-}
-
 .ueberschrift {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 50px;
@@ -47,9 +30,42 @@ header {
     font-size: 20px;
 }
 
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 80px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.178);
+}
+
+.headerInhaltContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: flex-startS;
+    width: 20%;
+}
+
+.logo {
+    width: 150px;
+}
+
 .menueContainer {
-    position: absolute;
-    right: 100px;
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
 }
 
 .menue {
@@ -73,8 +89,9 @@ a {
 
 .menuetext {
     font-size: 16px;
+    width: 100%;
     color: #6d6d6d;
-    padding: 40px;
+    padding: 25px;
     font-weight: 500;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     transition: 0.3s ease-out;
@@ -378,18 +395,15 @@ input:focus {
 
 @media screen and (max-width: 1300px) {
     /*Globale Komponenten*/
-    .logo {
-        padding-left: 50px;
-    }
-    .menueContainer {
-        right: 40px;
-    }
     .ueberschrift {
         font-size: 40px;
         width: 100%;
     }
     .textkoerper {
         line-height: 30px;
+    }
+    .headerInhaltContainer {
+        width: 90%;
     }
     /*Startseite*/
     .ebeneHeader {
@@ -435,18 +449,15 @@ input:focus {
 
 @media screen and (max-width: 900px) {
     /*Globale Komponenten*/
-    .logo {
-        padding-left: 20px;
-    }
-    .menueContainer {
-        right: 10px;
-    }
     .ueberschrift {
         font-size: 30px;
     }
     .textkoerper {
         font-size: 18px;
         line-height: 25px;
+    }
+    .headerInhaltContainer {
+        width: 95%;
     }
     /*Startseite*/
     .ebeneHeader {
