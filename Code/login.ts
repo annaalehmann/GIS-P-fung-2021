@@ -58,7 +58,7 @@ namespace pruefungsabgabe {
             localStorage.setItem("nutzername", nutzername);
             localStorage.setItem("passwort", passwort);
 
-            window.location.href = "index.html";
+            window.location.href = "alle-rezepte.html";
             window.alert("Du hast dich erfolgreich eingeloggt");
         }
 
