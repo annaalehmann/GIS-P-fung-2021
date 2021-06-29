@@ -104,15 +104,14 @@ namespace pruefungsabgabe {
             let zutatenliste: HTMLInputElement = document.createElement("input");
             zutatenliste.setAttribute("type", "text");
             zutatenliste.value = rezeptArray[iNr].zutaten[i]; 
-   
             document.getElementById("zutatenlisteEdit1").appendChild(zutatenliste);
         }
 
         for (let i: number = 5; i < 10; i++) {
             let zutatenliste: HTMLInputElement = document.createElement("input");
             zutatenliste.setAttribute("type", "text");
-            document.getElementById("zutatenlisteEdit2").appendChild(zutatenliste);
-            zutatenliste.value = rezeptArray[iNr].zutaten[i]; 
+            zutatenliste.value = rezeptArray[iNr].zutaten[i];
+            document.getElementById("zutatenlisteEdit2").appendChild(zutatenliste); 
         }
 
         let zubereitung: HTMLTextAreaElement = document.createElement("textarea");
@@ -126,6 +125,11 @@ namespace pruefungsabgabe {
         buttonUpdate.innerHTML = "aktualisieren";
         document.getElementById("buttonBearbeitenContainer").appendChild(buttonUpdate);
         buttonUpdate.id = "button";
+        buttonUpdate.addEventListener("click", handleRezeptAktualisieren);
+    }
+
+    async function handleRezeptAktualisieren(_event: Event): Promise<void> {
+        console.log("abc"); 
 
     }
 }

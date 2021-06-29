@@ -75,8 +75,8 @@ var pruefungsabgabe;
         for (let i = 5; i < 10; i++) {
             let zutatenliste = document.createElement("input");
             zutatenliste.setAttribute("type", "text");
-            document.getElementById("zutatenlisteEdit2").appendChild(zutatenliste);
             zutatenliste.value = rezeptArray[iNr].zutaten[i];
+            document.getElementById("zutatenlisteEdit2").appendChild(zutatenliste);
         }
         let zubereitung = document.createElement("textarea");
         zubereitung.setAttribute("type", "text");
@@ -87,6 +87,10 @@ var pruefungsabgabe;
         buttonUpdate.innerHTML = "aktualisieren";
         document.getElementById("buttonBearbeitenContainer").appendChild(buttonUpdate);
         buttonUpdate.id = "button";
+        buttonUpdate.addEventListener("click", handleRezeptAktualisieren);
+    }
+    async function handleRezeptAktualisieren(_event) {
+        console.log("abc");
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
 //# sourceMappingURL=meine-rezepte.js.map
