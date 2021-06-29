@@ -210,7 +210,7 @@ footer .textkoerper {
     margin-right: auto;
     width: 80%;
     padding-bottom: 50px;
-    background-color: #ce940044;
+    background-color: rgba(251, 238, 206, 0.945)
 }
 
 #allRecipes {
