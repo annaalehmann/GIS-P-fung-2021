@@ -117,26 +117,5 @@ namespace pruefungsabgabe {
         document.getElementById("editRecipes").appendChild(buttonUpdate);
         buttonUpdate.id = "buttonUpdate";
 
-
-        for (let i: number = 0; i < rezeptArray.length; i++) {
-    
-            let zutaten: HTMLElement = document.getElementById("zutaten");
-      
-    
-            let zubereitung: HTMLElement = document.createElement("p");
-            zubereitung.innerHTML = "Zubereitung: " + localStorage.getItem("zubereitung" + i);
-            div.appendChild(zubereitung);
-    
-            let autor: HTMLElement = document.createElement("p");
-            autor.innerHTML = "Autor: " + localStorage.getItem("autor" + i);
-            div.appendChild(autor);
-    
-            let button: HTMLElement = document.createElement("button");
-            button.innerHTML = "entfernen";
-            button.classList.add("buttonRezepte");
-            div.appendChild(button);
-            button.addEventListener("click", handleDelete);
-        }
-
     }
 }

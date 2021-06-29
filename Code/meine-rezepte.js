@@ -81,20 +81,6 @@ var pruefungsabgabe;
         buttonUpdate.innerHTML = "aktualisieren";
         document.getElementById("editRecipes").appendChild(buttonUpdate);
         buttonUpdate.id = "buttonUpdate";
-        for (let i = 0; i < rezeptArray.length; i++) {
-            let zutaten = document.getElementById("zutaten");
-            let zubereitung = document.createElement("p");
-            zubereitung.innerHTML = "Zubereitung: " + localStorage.getItem("zubereitung" + i);
-            div.appendChild(zubereitung);
-            let autor = document.createElement("p");
-            autor.innerHTML = "Autor: " + localStorage.getItem("autor" + i);
-            div.appendChild(autor);
-            let button = document.createElement("button");
-            button.innerHTML = "entfernen";
-            button.classList.add("buttonRezepte");
-            div.appendChild(button);
-            button.addEventListener("click", handleDelete);
-        }
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
 //# sourceMappingURL=meine-rezepte.js.map
