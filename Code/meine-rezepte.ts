@@ -22,8 +22,8 @@ namespace pruefungsabgabe {
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
 
-        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url: string = "http://localhost:8100";
+        let _url: string = "https://gis-pruefung-2021.herokuapp.com";
+        /*let _url: string = "http://localhost:8100";*/
         _url += "/insertRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
         await fetch(_url);
 
@@ -33,8 +33,8 @@ namespace pruefungsabgabe {
     //Rezepte des Nutzers anzeigen lassen
     async function handlePublishMyRecipes(): Promise<void> {
 
-        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url: string = "http://localhost:8100";
+        let _url: string = "https://gis-pruefung-2021.herokuapp.com";
+       /* let _url: string = "http://localhost:8100";*/
         _url += "/publishMyRecipe";
 
         let response: Response = await fetch(_url);
@@ -84,8 +84,8 @@ namespace pruefungsabgabe {
         let i: string = (<HTMLElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("counter")!;
         document.getElementById("currentRecipeDiv" + i)?.remove();
 
-        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url: string = "http://localhost:8100";
+        let _url: string = "https://gis-pruefung-2021.herokuapp.com";
+        /*let _url: string = "http://localhost:8100";*/
         _url += "/deleteMyRecipe" + "?" + "counter=" + i;
         await fetch(_url);
     }
@@ -134,8 +134,8 @@ namespace pruefungsabgabe {
         let formData: FormData = new FormData(document.forms[1]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
 
-        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url: string = "http://localhost:8100";
+        let _url: string = "https://gis-pruefung-2021.herokuapp.com";
+        /*let _url: string = "http://localhost:8100";*/
         _url += "/searchRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
         await fetch(_url);
     }
@@ -147,8 +147,8 @@ namespace pruefungsabgabe {
         let formData: FormData = new FormData(document.forms[1]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
 
-        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url: string = "http://localhost:8100";
+        let _url: string = "https://gis-pruefung-2021.herokuapp.com";
+        /*let _url: string = "http://localhost:8100";*/
         _url += "/updateRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
         await fetch(_url);
 

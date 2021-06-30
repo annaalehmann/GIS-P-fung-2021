@@ -9,8 +9,8 @@ var pruefungsabgabe;
         //Greift auf die ausgefüllten Daten des Formulars zu und gibt diese an den Server weiter
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
-        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url = "http://localhost:8100";
+        let _url = "https://gis-pruefung-2021.herokuapp.com";
+        /*let _url: string = "http://localhost:8100";*/
         _url += "/registrierung" + "?" + query.toString();
         let response = await fetch(_url);
         let responseText = await response.text();
@@ -26,8 +26,8 @@ var pruefungsabgabe;
         //Greift auf die ausgefüllten Daten des Formulars zu und gibt diese an den Server weiter
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
-        /*let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url = "http://localhost:8100";
+        let _url = "https://gis-pruefung-2021.herokuapp.com";
+        /*let _url: string = "http://localhost:8100";*/
         _url = _url + "/login" + "?" + query.toString();
         let response = await fetch(_url);
         let responseText = await response.text();

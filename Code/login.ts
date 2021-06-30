@@ -12,8 +12,8 @@ namespace pruefungsabgabe {
         //Greift auf die ausgefüllten Daten des Formulars zu und gibt diese an den Server weiter
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url: string = "http://localhost:8100";
+        let _url: string = "https://gis-pruefung-2021.herokuapp.com";
+        /*let _url: string = "http://localhost:8100";*/
         _url += "/registrierung" + "?" + query.toString();
 
         let response: Response = await fetch(_url);
@@ -34,8 +34,8 @@ namespace pruefungsabgabe {
         //Greift auf die ausgefüllten Daten des Formulars zu und gibt diese an den Server weiter
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        /*let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url: string = "http://localhost:8100";
+        let _url: string = "https://gis-pruefung-2021.herokuapp.com";
+        /*let _url: string = "http://localhost:8100";*/
         _url = _url + "/login" + "?" + query.toString();
 
         let response: Response = await fetch(_url);

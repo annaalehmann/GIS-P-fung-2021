@@ -9,16 +9,16 @@ var pruefungsabgabe;
     async function handleInsert() {
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
-        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url = "http://localhost:8100";
+        let _url = "https://gis-pruefung-2021.herokuapp.com";
+        /*let _url: string = "http://localhost:8100";*/
         _url += "/insertRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
         await fetch(_url);
         location.reload();
     }
     //Rezepte des Nutzers anzeigen lassen
     async function handlePublishMyRecipes() {
-        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url = "http://localhost:8100";
+        let _url = "https://gis-pruefung-2021.herokuapp.com";
+        /* let _url: string = "http://localhost:8100";*/
         _url += "/publishMyRecipe";
         let response = await fetch(_url);
         let responseJSON = await response.json();
@@ -56,8 +56,8 @@ var pruefungsabgabe;
     async function handleRezeptLoeschen(_event) {
         let i = _event.currentTarget.parentElement.getAttribute("counter");
         document.getElementById("currentRecipeDiv" + i)?.remove();
-        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url = "http://localhost:8100";
+        let _url = "https://gis-pruefung-2021.herokuapp.com";
+        /*let _url: string = "http://localhost:8100";*/
         _url += "/deleteMyRecipe" + "?" + "counter=" + i;
         await fetch(_url);
     }
@@ -95,8 +95,8 @@ var pruefungsabgabe;
         buttonUpdate.addEventListener("click", handleRezeptAktualisieren);
         let formData = new FormData(document.forms[1]);
         let query = new URLSearchParams(formData);
-        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url = "http://localhost:8100";
+        let _url = "https://gis-pruefung-2021.herokuapp.com";
+        /*let _url: string = "http://localhost:8100";*/
         _url += "/searchRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
         await fetch(_url);
     }
@@ -105,8 +105,8 @@ var pruefungsabgabe;
     async function handleRezeptAktualisieren(_event) {
         let formData = new FormData(document.forms[1]);
         let query = new URLSearchParams(formData);
-        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url = "http://localhost:8100";
+        let _url = "https://gis-pruefung-2021.herokuapp.com";
+        /*let _url: string = "http://localhost:8100";*/
         _url += "/updateRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
         await fetch(_url);
         location.reload();

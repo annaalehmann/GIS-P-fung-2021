@@ -18,8 +18,8 @@ namespace pruefungsabgabe {
     
     async function handlePublishAllRecipes(): Promise<void> {
 
-        /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
-        let _url: string = "http://localhost:8100";
+        let _url: string = "https://gis-pruefung-2021.herokuapp.com";
+        /*let _url: string = "http://localhost:8100";*/
         _url += "/publishAllRecipes";
 
         //Die von dem Server gefundenen Inhalte der Datenbank werden in ein Objekt umgewandelt 
