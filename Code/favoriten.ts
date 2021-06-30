@@ -54,7 +54,5 @@ function handleDelete(_event: Event): void {
         localStorage.setItem("zubereitung" + iNr, localStorage.getItem("zubereitung" + iPlusOne));
         localStorage.setItem("autor" + iNr, localStorage.getItem("autor" + iPlusOne));
     }
-
-    console.log(localStorage.counter); 
 }
 }
