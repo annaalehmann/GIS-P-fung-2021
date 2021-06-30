@@ -88,9 +88,21 @@ var pruefungsabgabe;
         document.getElementById("buttonBearbeitenContainer").appendChild(buttonUpdate);
         buttonUpdate.id = "button";
         buttonUpdate.addEventListener("click", handleRezeptAktualisieren);
+        let formData = new FormData(document.forms[1]);
+        let query = new URLSearchParams(formData);
+        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
+        let _url = "http://localhost:8100";
+        _url += "/searchRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
+        await fetch(_url);
     }
     async function handleRezeptAktualisieren(_event) {
-        console.log("abc");
+        let formData = new FormData(document.forms[1]);
+        let query = new URLSearchParams(formData);
+        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
+        let _url = "http://localhost:8100";
+        _url += "/updateRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
+        await fetch(_url);
+        location.reload();
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
 //# sourceMappingURL=meine-rezepte.js.map

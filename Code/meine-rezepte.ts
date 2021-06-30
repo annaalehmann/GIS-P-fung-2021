@@ -1,6 +1,7 @@
 namespace pruefungsabgabe {
 
     interface Rezepte {
+        _id: string;
         zutaten: string;
         zubereitung: string;
         autor: string;
@@ -126,10 +127,27 @@ namespace pruefungsabgabe {
         document.getElementById("buttonBearbeitenContainer").appendChild(buttonUpdate);
         buttonUpdate.id = "button";
         buttonUpdate.addEventListener("click", handleRezeptAktualisieren);
+
+
+        let formData: FormData = new FormData(document.forms[1]);
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+
+        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
+        let _url: string = "http://localhost:8100";
+        _url += "/searchRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
+        await fetch(_url);
     }
 
     async function handleRezeptAktualisieren(_event: Event): Promise<void> {
-        console.log("abc"); 
+        let formData: FormData = new FormData(document.forms[1]);
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+
+        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
+        let _url: string = "http://localhost:8100";
+        _url += "/updateRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
+        await fetch(_url);
+
+        location.reload();
 
     }
 }

@@ -7,6 +7,7 @@ const Mongo = require("mongodb");
 var pruefungsabgabe;
 (function (pruefungsabgabe) {
     let nutzerArray;
+    let rezeptArray;
     let url;
     url = "mongodb+srv://test-user:12345@foodmood.bxjhf.mongodb.net/database_foodmood?retryWrites=true&w=majority";
     let registrierungDaten;
@@ -73,6 +74,14 @@ var pruefungsabgabe;
                 let counter = parseFloat(JSON.stringify(url.query).replace(/\D/g, ""));
                 rezepteDaten.deleteOne(rezepte[counter]);
                 console.log("Rezept gelöscht");
+            }
+            if (pathname == "/searchRecipe") {
+                rezeptArray = await rezepteDaten.findOne(url.query);
+                console.log("Rezept gefunden");
+            }
+            if (pathname == "/updateRecipe") {
+                rezepteDaten.findOneAndUpdate({ "_id": new Mongo.ObjectId(rezeptArray._id) }, { $set: url.query });
+                console.log("Rezept aktualisiert");
             }
             response.end();
         }

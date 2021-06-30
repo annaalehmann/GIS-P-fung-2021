@@ -10,7 +10,15 @@ export namespace pruefungsabgabe {
     passwort: string;
   }
 
+  export interface Rezepte {
+    _id: string; 
+    zutaten: string; 
+    zubereitung: string; 
+    autor: string;
+  }
+
   let nutzerArray: Nutzer;
+  let rezeptArray: Rezepte;
 
   let url: string;
   url = "mongodb+srv://test-user:12345@foodmood.bxjhf.mongodb.net/database_foodmood?retryWrites=true&w=majority";
@@ -103,6 +111,16 @@ export namespace pruefungsabgabe {
         let counter: number = parseFloat(JSON.stringify(url.query).replace(/\D/g, ""));
         rezepteDaten.deleteOne(rezepte[counter]);
         console.log("Rezept gelöscht");
+      }
+
+      if (pathname == "/searchRecipe") {
+        rezeptArray = await rezepteDaten.findOne(url.query);
+        console.log("Rezept gefunden");
+      }
+
+      if (pathname == "/updateRecipe") {
+        rezepteDaten.findOneAndUpdate({"_id": new Mongo.ObjectId(rezeptArray._id)}, {$set: url.query});
+        console.log("Rezept aktualisiert");
       }
 
       response.end();
