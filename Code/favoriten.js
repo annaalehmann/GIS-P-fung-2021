@@ -43,7 +43,6 @@ var pruefungsabgabe;
             localStorage.setItem("zubereitung" + iNr, localStorage.getItem("zubereitung" + iPlusOne));
             localStorage.setItem("autor" + iNr, localStorage.getItem("autor" + iPlusOne));
         }
-        console.log(localStorage.counter);
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
 //# sourceMappingURL=favoriten.js.map

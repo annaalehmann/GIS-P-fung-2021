@@ -47,8 +47,6 @@ var pruefungsabgabe;
         localStorage.setItem("zubereitung" + localStorage.counter, rezeptArray[iNr].zubereitung);
         localStorage.setItem("autor" + localStorage.counter, rezeptArray[iNr].autor);
         localStorage.counter = Number(localStorage.counter) + 1;
-        console.log(localStorage);
-        console.log(localStorage.counter);
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
 //# sourceMappingURL=alle-rezepte.js.map

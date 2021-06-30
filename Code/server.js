@@ -93,8 +93,8 @@ var pruefungsabgabe;
                 rezeptArray = await rezepteDaten.findOne(url.query);
                 console.log("Rezept gefunden");
             }
-            //Mit dem klick auf "aktualisieren" wird anhand der im Interface gespeicherten _id, das entsprechende Rezept in der Datenbank 
-            //gefunden und mit den neuen Inhalten überschrieben werden. 
+            //Klickt man auf "aktualisieren" wird, anhand der im Interface gespeicherten _id, das entsprechende Rezept in der Datenbank 
+            //gefunden und mit den neuen Inhalten des Formulars überschrieben. 
             if (pathname == "/updateRecipe") {
                 rezepteDaten.findOneAndUpdate({ "_id": new Mongo.ObjectId(rezeptArray._id) }, { $set: url.query });
                 console.log("Rezept aktualisiert");

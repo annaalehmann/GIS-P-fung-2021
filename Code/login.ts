@@ -38,7 +38,6 @@ namespace pruefungsabgabe {
         let _url: string = "http://localhost:8100";
         _url = _url + "/login" + "?" + query.toString();
 
-        console.log(_url);
         let response: Response = await fetch(_url);
         let responseText: string = await response.text();
 

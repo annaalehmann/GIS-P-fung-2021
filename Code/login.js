@@ -29,7 +29,6 @@ var pruefungsabgabe;
         /*let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url = "http://localhost:8100";
         _url = _url + "/login" + "?" + query.toString();
-        console.log(_url);
         let response = await fetch(_url);
         let responseText = await response.text();
         //Ist der Login erfolgreich abgelaufen werden nutzername und passwort im localStorage gespeichert und man wird zur Startseite weitergeleitet.
