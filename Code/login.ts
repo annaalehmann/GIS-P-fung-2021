@@ -6,6 +6,8 @@ namespace pruefungsabgabe {
     let buttonRegistrierung: HTMLButtonElement = <HTMLButtonElement>document.getElementById("registrierung");
     buttonRegistrierung.addEventListener("click", handleRegistrierung);
 
+    localStorage.removeItem("nutzername");
+    localStorage.removeItem("passwort");
     
     async function handleRegistrierung(): Promise<void> {
 
