@@ -9,7 +9,7 @@ namespace pruefungsabgabe {
     
     async function handleRegistrierung(): Promise<void> {
 
-        //Greift auf die ausgefüllten Daten des ersten Formulars zu und gibt diese an den Server weiter
+        //Greift auf die ausgefüllten Daten des Formulars zu und gibt diese an den Server weiter
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
@@ -31,7 +31,7 @@ namespace pruefungsabgabe {
 
     async function handleLogin(): Promise<void> {
 
-        //Greift auf die ausgefüllten Daten des ersten Formulars zu und gibt diese an den Server weiter
+        //Greift auf die ausgefüllten Daten des Formulars zu und gibt diese an den Server weiter
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         /*let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/

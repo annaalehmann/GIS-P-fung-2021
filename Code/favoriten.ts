@@ -2,7 +2,7 @@ namespace pruefungsabgabe {
 
 handleFavoriten();
 
-//Mithilfe des localStorage-Counters können die im localStorage gespeicherten Rezepte identifiziert und nacheinander aufgerufen sowie aufgebaut werden 
+//Mithilfe des localStorage-Counters können die im localStorage gespeicherten Rezepte nacheinander aufgerufen sowie aufgebaut werden 
 function handleFavoriten(): void {
 
     for (let i: number = 0; i < localStorage.counter; i++) {

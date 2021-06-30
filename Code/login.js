@@ -6,7 +6,7 @@ var pruefungsabgabe;
     let buttonRegistrierung = document.getElementById("registrierung");
     buttonRegistrierung.addEventListener("click", handleRegistrierung);
     async function handleRegistrierung() {
-        //Greift auf die ausgefüllten Daten des ersten Formulars zu und gibt diese an den Server weiter
+        //Greift auf die ausgefüllten Daten des Formulars zu und gibt diese an den Server weiter
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
         /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
@@ -23,7 +23,7 @@ var pruefungsabgabe;
         }
     }
     async function handleLogin() {
-        //Greift auf die ausgefüllten Daten des ersten Formulars zu und gibt diese an den Server weiter
+        //Greift auf die ausgefüllten Daten des Formulars zu und gibt diese an den Server weiter
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
         /*let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
