@@ -8,8 +8,7 @@ namespace pruefungsabgabe {
 
     localStorage.removeItem("nutzername");
     localStorage.removeItem("passwort");
-    console.log(localStorage.getItem("nutzername"));
-    
+
     async function handleRegistrierung(): Promise<void> {
 
         //Greift auf die ausgefüllten Daten des Formulars zu und gibt diese an den Server weiter
