@@ -1,5 +1,6 @@
 namespace pruefungsabgabe {
 
+    //Interface und Array um die Inhalte der Rezepte aus der Datenbank zu laden
     interface Rezepte {
         _id: string;
         zutaten: string;
@@ -13,10 +14,9 @@ namespace pruefungsabgabe {
     publishButton.addEventListener("click", handleInsert);
 
 
-
     handlePublishMyRecipes();
 
-    //Rezept in Datenbank einfügen
+    //Greift auf die Inhalte des ersten ausgefüllten Formulars zu und übermittelt diese gemeinsam mit dem Nutzernamen an den Server
     async function handleInsert(): Promise<void> {
 
         let formData: FormData = new FormData(document.forms[0]);
@@ -30,7 +30,7 @@ namespace pruefungsabgabe {
         location.reload();
     }
 
-    //Rezepte des Nutzers anzeigen
+    //Rezepte des Nutzers anzeigen lassen
     async function handlePublishMyRecipes(): Promise<void> {
 
         /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
@@ -41,7 +41,7 @@ namespace pruefungsabgabe {
         let responseJSON: string = await response.json();
         rezeptArray = JSON.parse(JSON.stringify(responseJSON));
 
-        /*Aufbau der einzelnen Rezepte*/
+        /*Aufbau der Rezepte*/
         document.getElementById("myRecipes").innerHTML = "";
 
         for (let i: number = 0; i < rezeptArray.length; i++) {
@@ -78,7 +78,7 @@ namespace pruefungsabgabe {
         }
     }
 
-    /*Meine Rezepte löschen*/
+    //
     async function handleRezeptLoeschen(_event: Event): Promise<void> {
 
         let i: string = (<HTMLElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("counter")!;
@@ -90,7 +90,7 @@ namespace pruefungsabgabe {
         await fetch(_url);
     }
 
-
+    // Aufbau eines neuen Formulars, welches mit dem jeweiligen Inhalt des zu bearbeitenden Rezeptes gefüllt wird
     async function handleRezeptBearbeiten(_event: Event): Promise<void> {
 
         let i: string = (<HTMLElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("counter")!;
@@ -140,6 +140,9 @@ namespace pruefungsabgabe {
         await fetch(_url);
     }
 
+
+    /*Greift auf die Inhalte des zweiten ausgefüllten Formulars (Bearbeitungsformar) zu und übermittelt diese gemeinsam mit 
+    dem Nutzernamen an den Server*/
     async function handleRezeptAktualisieren(_event: Event): Promise<void> {
         let formData: FormData = new FormData(document.forms[1]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);

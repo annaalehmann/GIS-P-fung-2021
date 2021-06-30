@@ -5,7 +5,7 @@ var pruefungsabgabe;
     let publishButton = document.getElementById("publish");
     publishButton.addEventListener("click", handleInsert);
     handlePublishMyRecipes();
-    //Rezept in Datenbank einfügen
+    //Greift auf die Inhalte des ersten ausgefüllten Formulars zu und übermittelt diese gemeinsam mit dem Nutzernamen an den Server
     async function handleInsert() {
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
@@ -15,7 +15,7 @@ var pruefungsabgabe;
         await fetch(_url);
         location.reload();
     }
-    //Rezepte des Nutzers anzeigen
+    //Rezepte des Nutzers anzeigen lassen
     async function handlePublishMyRecipes() {
         /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url = "http://localhost:8100";
@@ -23,7 +23,7 @@ var pruefungsabgabe;
         let response = await fetch(_url);
         let responseJSON = await response.json();
         rezeptArray = JSON.parse(JSON.stringify(responseJSON));
-        /*Aufbau der einzelnen Rezepte*/
+        /*Aufbau der Rezepte*/
         document.getElementById("myRecipes").innerHTML = "";
         for (let i = 0; i < rezeptArray.length; i++) {
             let div = document.createElement("div");
@@ -52,7 +52,7 @@ var pruefungsabgabe;
             buttonDelete.addEventListener("click", handleRezeptLoeschen);
         }
     }
-    /*Meine Rezepte löschen*/
+    //
     async function handleRezeptLoeschen(_event) {
         let i = _event.currentTarget.parentElement.getAttribute("counter");
         document.getElementById("currentRecipeDiv" + i)?.remove();
@@ -61,6 +61,7 @@ var pruefungsabgabe;
         _url += "/deleteMyRecipe" + "?" + "counter=" + i;
         await fetch(_url);
     }
+    // Aufbau eines neuen Formulars, welches mit dem jeweiligen Inhalt des zu bearbeitenden Rezeptes gefüllt wird
     async function handleRezeptBearbeiten(_event) {
         let i = _event.currentTarget.parentElement.getAttribute("counter");
         let iNr = parseInt(i);
@@ -99,6 +100,8 @@ var pruefungsabgabe;
         _url += "/searchRecipe" + "?" + query.toString() + "&autor=" + localStorage.getItem("nutzername");
         await fetch(_url);
     }
+    /*Greift auf die Inhalte des zweiten ausgefüllten Formulars (Bearbeitungsformar) zu und übermittelt diese gemeinsam mit
+    dem Nutzernamen an den Server*/
     async function handleRezeptAktualisieren(_event) {
         let formData = new FormData(document.forms[1]);
         let query = new URLSearchParams(formData);

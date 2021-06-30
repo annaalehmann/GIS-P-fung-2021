@@ -1,30 +1,25 @@
 namespace pruefungsabgabe {
 
-    /*Variablen Deklaration für den Login-BUtton*/
     let buttonLogin: HTMLButtonElement = <HTMLButtonElement>document.getElementById("login");
-    /*Beim klicken auf den Button wird die Funktion handleLogin durchgeführt*/
     buttonLogin.addEventListener("click", handleLogin);
 
-    /*Variablen Deklaration für den Registrieren-BUtton*/
     let buttonRegistrierung: HTMLButtonElement = <HTMLButtonElement>document.getElementById("registrierung");
-    /**Beim klicken auf den Button wird die Funktion handleLogin durchgeführt**/
     buttonRegistrierung.addEventListener("click", handleRegistrierung);
 
-
-
-
+    
     async function handleRegistrierung(): Promise<void> {
 
+        //Greift auf die ausgefüllten Daten des ersten Formulars zu und gibt diese an den Server weiter
         let formData: FormData = new FormData(document.forms[0]);
-        /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
+        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
         _url += "/registrierung" + "?" + query.toString();
 
         let response: Response = await fetch(_url);
         let responseText: string = await response.text();
 
+        //Überprüfung ob es den Account bereits gibt oder die registrierung erfolgreich abgelaufen ist
         if (responseText == "true") {
             window.alert("Du hast dich erfolgreich registriert.");
         }
@@ -34,22 +29,20 @@ namespace pruefungsabgabe {
         }
     }
 
-    /*async: Funktion als asynchrone Kommunikation deklariert, Promise: liefert Antwort vom Server, void: kein Wert? */
     async function handleLogin(): Promise<void> {
-        
+
+        //Greift auf die ausgefüllten Daten des ersten Formulars zu und gibt diese an den Server weiter
         let formData: FormData = new FormData(document.forms[0]);
-        /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         /*let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
         _url = _url + "/login" + "?" + query.toString();
 
-        /*await: Ausführung der Funktion kann unterbrochen und zu einem späteren Zeitpunkt fortgesetzt werden, fetch: an den Server Anfrage verschicken und auf Antwort warten */
         console.log(_url);
         let response: Response = await fetch(_url);
         let responseText: string = await response.text();
-        console.log("test3");
 
+        //Ist der Login erfolgreich abgelaufen werden nutzername und passwort im localStorage gespeichert und man wird zur Startseite weitergeleitet.
         if (responseText == "true") {
 
             let nutzername: string = <string>formData.get("nutzername");
@@ -62,6 +55,7 @@ namespace pruefungsabgabe {
             window.alert("Du hast dich erfolgreich eingeloggt");
         }
 
+         //Falls die Login-Daten noch nicht vergeben sind kommt es zu einer Fehlermeldung. 
         else {
             window.alert("Fehler beim Login. Versuche es erneut.");
         }

@@ -10,9 +10,11 @@ var pruefungsabgabe;
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url = "http://localhost:8100";
         _url += "/publishAllRecipes";
+        //Die von dem Server gefundenen Inhalte der Datenbank werden in ein Objekt umgewandelt 
         let response = await fetch(_url);
         let responseJSON = await response.json();
         rezeptArray = JSON.parse(JSON.stringify(responseJSON));
+        //Aufbau der einzelnen Rezepte
         document.getElementById("allRecipes").innerHTML = "";
         for (let i = 0; i < rezeptArray.length; i++) {
             let div = document.createElement("div");
@@ -36,6 +38,8 @@ var pruefungsabgabe;
             button.addEventListener("click", handleFavorisieren);
         }
     }
+    //Der Inhalt der Rezepte wird im localStorage abgespeichert.
+    //Bei jedem abgespeicherten Rezept wird der localStorage-Counter um 1 erhöht.
     async function handleFavorisieren(_event) {
         let i = _event.currentTarget.parentElement.getAttribute("counter");
         let iNr = parseInt(i);
@@ -44,6 +48,7 @@ var pruefungsabgabe;
         localStorage.setItem("autor" + localStorage.counter, rezeptArray[iNr].autor);
         localStorage.counter = Number(localStorage.counter) + 1;
         console.log(localStorage);
+        console.log(localStorage.counter);
     }
 })(pruefungsabgabe || (pruefungsabgabe = {}));
 //# sourceMappingURL=alle-rezepte.js.map

@@ -1,6 +1,8 @@
 namespace pruefungsabgabe {
 
+    //Interface und Array um die Inhalte der Rezepte aus der Datenbank zu laden
     interface Rezepte {
+        _id: string; 
         zutaten: string;
         zubereitung: string;
         autor: string;
@@ -13,17 +15,19 @@ namespace pruefungsabgabe {
     if (!localStorage.counter) {
         localStorage.counter = 0;
     }
-
+    
     async function handlePublishAllRecipes(): Promise<void> {
 
         /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url: string = "http://localhost:8100";
         _url += "/publishAllRecipes";
 
+        //Die von dem Server gefundenen Inhalte der Datenbank werden in ein Objekt umgewandelt 
         let response: Response = await fetch(_url);
         let responseJSON: string = await response.json();
         rezeptArray = JSON.parse(JSON.stringify(responseJSON));
 
+        //Aufbau der einzelnen Rezepte
         document.getElementById("allRecipes").innerHTML = "";
 
         for (let i: number = 0; i < rezeptArray.length; i++) {
@@ -54,6 +58,8 @@ namespace pruefungsabgabe {
         }
     }
 
+    //Der Inhalt der Rezepte wird im localStorage abgespeichert.
+    //Bei jedem abgespeicherten Rezept wird der localStorage-Counter um 1 erhöht.
     async function handleFavorisieren(_event: Event): Promise<void> {
 
         let i: string = (<HTMLElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("counter")!;
@@ -65,5 +71,6 @@ namespace pruefungsabgabe {
         localStorage.counter = Number(localStorage.counter) + 1;
 
         console.log(localStorage);
+        console.log(localStorage.counter);
     }
 }

@@ -1,23 +1,20 @@
 "use strict";
 var pruefungsabgabe;
 (function (pruefungsabgabe) {
-    /*Variablen Deklaration für den Login-BUtton*/
     let buttonLogin = document.getElementById("login");
-    /*Beim klicken auf den Button wird die Funktion handleLogin durchgeführt*/
     buttonLogin.addEventListener("click", handleLogin);
-    /*Variablen Deklaration für den Registrieren-BUtton*/
     let buttonRegistrierung = document.getElementById("registrierung");
-    /**Beim klicken auf den Button wird die Funktion handleLogin durchgeführt**/
     buttonRegistrierung.addEventListener("click", handleRegistrierung);
     async function handleRegistrierung() {
+        //Greift auf die ausgefüllten Daten des ersten Formulars zu und gibt diese an den Server weiter
         let formData = new FormData(document.forms[0]);
-        /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/
         let query = new URLSearchParams(formData);
-        /* let url: string = "https://gis-pruefung-2021.herokuapp.com";*/
+        /* let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url = "http://localhost:8100";
         _url += "/registrierung" + "?" + query.toString();
         let response = await fetch(_url);
         let responseText = await response.text();
+        //Überprüfung ob es den Account bereits gibt oder die registrierung erfolgreich abgelaufen ist
         if (responseText == "true") {
             window.alert("Du hast dich erfolgreich registriert.");
         }
@@ -25,19 +22,17 @@ var pruefungsabgabe;
             window.alert("Registrierung fehlgeschlagen. Wohlmöglich gibt es diesen Account schon.");
         }
     }
-    /*async: Funktion als asynchrone Kommunikation deklariert, Promise: liefert Antwort vom Server, void: kein Wert? */
     async function handleLogin() {
+        //Greift auf die ausgefüllten Daten des ersten Formulars zu und gibt diese an den Server weiter
         let formData = new FormData(document.forms[0]);
-        /*Mit URLSearchParams Daten aus dem FormData-Objekt generieren, any, da Typescript FormData als Parameter nicht akzeptiert*/
         let query = new URLSearchParams(formData);
         /*let _url: string = "https://gis-pruefung-2021.herokuapp.com";*/
         let _url = "http://localhost:8100";
         _url = _url + "/login" + "?" + query.toString();
-        /*await: Ausführung der Funktion kann unterbrochen und zu einem späteren Zeitpunkt fortgesetzt werden, fetch: an den Server Anfrage verschicken und auf Antwort warten */
         console.log(_url);
         let response = await fetch(_url);
         let responseText = await response.text();
-        console.log("test3");
+        //Ist der Login erfolgreich abgelaufen werden nutzername und passwort im localStorage gespeichert und man wird zur Startseite weitergeleitet.
         if (responseText == "true") {
             let nutzername = formData.get("nutzername");
             let passwort = formData.get("passwort");
@@ -46,6 +41,7 @@ var pruefungsabgabe;
             window.location.href = "alle-rezepte.html";
             window.alert("Du hast dich erfolgreich eingeloggt");
         }
+        //Falls die Login-Daten noch nicht vergeben sind kommt es zu einer Fehlermeldung. 
         else {
             window.alert("Fehler beim Login. Versuche es erneut.");
         }

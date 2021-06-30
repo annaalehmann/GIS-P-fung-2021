@@ -1,8 +1,8 @@
 namespace pruefungsabgabe {
 
 handleFavoriten();
-console.log(localStorage);
 
+//Mithilfe des localStorage-Counters können die im localStorage gespeicherten Rezepte identifiziert und nacheinander aufgerufen sowie aufgebaut werden 
 function handleFavoriten(): void {
 
     for (let i: number = 0; i < localStorage.counter; i++) {
@@ -33,6 +33,7 @@ function handleFavoriten(): void {
     }
 }
 
+
 function handleDelete(_event: Event): void {
 
     let i: string = (<HTMLElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("counter")!;
@@ -40,16 +41,20 @@ function handleDelete(_event: Event): void {
     let iPlusOne: number = 0; 
     document.getElementById("currentRecipeDiv" + i)?.remove(); 
 
+    /*Bei jedem zu entfernenden Rezept wird der localStorage-Counter um 1 verringert und die Position des Rezeptes im localStorage wird gelöscht. */
     localStorage.counter--;
     localStorage.removeItem("zutaten" + i);
     localStorage.removeItem("zubereitung" + i);
     localStorage.removeItem("autor" + i);
 
+    /*Im localStorage werden ab dem gelöschten Rezept alle Lücken aufgefüllt*/
     for (iNr; iNr < localStorage.counter; iNr++) {
         iPlusOne = iNr + 1; 
         localStorage.setItem("zutaten" + iNr, localStorage.getItem("zutaten" + iPlusOne));
         localStorage.setItem("zubereitung" + iNr, localStorage.getItem("zubereitung" + iPlusOne));
         localStorage.setItem("autor" + iNr, localStorage.getItem("autor" + iPlusOne));
     }
+
+    console.log(localStorage.counter); 
 }
 }
