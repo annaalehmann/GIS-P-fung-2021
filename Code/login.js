@@ -7,6 +7,7 @@ var pruefungsabgabe;
     buttonRegistrierung.addEventListener("click", handleRegistrierung);
     localStorage.removeItem("nutzername");
     localStorage.removeItem("passwort");
+    console.log(localStorage);
     async function handleRegistrierung() {
         //Greift auf die ausgefüllten Daten des Formulars zu und gibt diese an den Server weiter
         let formData = new FormData(document.forms[0]);

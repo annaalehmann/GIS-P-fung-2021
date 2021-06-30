@@ -8,6 +8,7 @@ namespace pruefungsabgabe {
 
     localStorage.removeItem("nutzername");
     localStorage.removeItem("passwort");
+    console.log(localStorage);
     
     async function handleRegistrierung(): Promise<void> {
 
