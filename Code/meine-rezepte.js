@@ -23,6 +23,7 @@ var pruefungsabgabe;
         let response = await fetch(_url);
         let responseJSON = await response.json();
         rezeptArray = JSON.parse(JSON.stringify(responseJSON));
+        /*Aufbau der einzelnen Rezepte*/
         document.getElementById("myRecipes").innerHTML = "";
         for (let i = 0; i < rezeptArray.length; i++) {
             let div = document.createElement("div");
@@ -51,6 +52,7 @@ var pruefungsabgabe;
             buttonDelete.addEventListener("click", handleRezeptLoeschen);
         }
     }
+    /*Meine Rezepte löschen*/
     async function handleRezeptLoeschen(_event) {
         let i = _event.currentTarget.parentElement.getAttribute("counter");
         document.getElementById("currentRecipeDiv" + i)?.remove();

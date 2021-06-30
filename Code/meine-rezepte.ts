@@ -41,6 +41,7 @@ namespace pruefungsabgabe {
         let responseJSON: string = await response.json();
         rezeptArray = JSON.parse(JSON.stringify(responseJSON));
 
+        /*Aufbau der einzelnen Rezepte*/
         document.getElementById("myRecipes").innerHTML = "";
 
         for (let i: number = 0; i < rezeptArray.length; i++) {
@@ -77,6 +78,7 @@ namespace pruefungsabgabe {
         }
     }
 
+    /*Meine Rezepte löschen*/
     async function handleRezeptLoeschen(_event: Event): Promise<void> {
 
         let i: string = (<HTMLElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("counter")!;
@@ -98,8 +100,6 @@ namespace pruefungsabgabe {
         document.getElementById("zutatenlisteEdit2").innerHTML = "";
         document.getElementById("zubereitungBearbeiten").innerHTML = "";
         document.getElementById("buttonBearbeitenContainer").innerHTML = "";
-
-
 
         for (let i: number = 0; i < 5; i++) {
             let zutatenliste: HTMLInputElement = document.createElement("input");
