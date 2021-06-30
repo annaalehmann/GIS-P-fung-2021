@@ -104,7 +104,8 @@ namespace pruefungsabgabe {
         for (let i: number = 0; i < 5; i++) {
             let zutatenliste: HTMLInputElement = document.createElement("input");
             zutatenliste.setAttribute("type", "text");
-            zutatenliste.value = rezeptArray[iNr].zutaten[i]; 
+            zutatenliste.value = rezeptArray[iNr].zutaten[i];
+            zutatenliste.name = "zutaten"; 
             document.getElementById("zutatenlisteEdit1").appendChild(zutatenliste);
         }
 
@@ -112,14 +113,15 @@ namespace pruefungsabgabe {
             let zutatenliste: HTMLInputElement = document.createElement("input");
             zutatenliste.setAttribute("type", "text");
             zutatenliste.value = rezeptArray[iNr].zutaten[i];
+            zutatenliste.name = "zutaten"; 
             document.getElementById("zutatenlisteEdit2").appendChild(zutatenliste); 
         }
 
         let zubereitung: HTMLTextAreaElement = document.createElement("textarea");
         zubereitung.setAttribute("type", "text");
         document.getElementById("zubereitungBearbeiten").appendChild(zubereitung);
-        zubereitung.id = "zubereitung";
         zubereitung.value = rezeptArray[iNr].zubereitung; 
+        zubereitung.name = "zubereitung"; 
      
 
         let buttonUpdate: HTMLElement = document.createElement("button");

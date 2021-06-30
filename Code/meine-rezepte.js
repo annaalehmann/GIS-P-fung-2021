@@ -72,19 +72,21 @@ var pruefungsabgabe;
             let zutatenliste = document.createElement("input");
             zutatenliste.setAttribute("type", "text");
             zutatenliste.value = rezeptArray[iNr].zutaten[i];
+            zutatenliste.name = "zutaten";
             document.getElementById("zutatenlisteEdit1").appendChild(zutatenliste);
         }
         for (let i = 5; i < 10; i++) {
             let zutatenliste = document.createElement("input");
             zutatenliste.setAttribute("type", "text");
             zutatenliste.value = rezeptArray[iNr].zutaten[i];
+            zutatenliste.name = "zutaten";
             document.getElementById("zutatenlisteEdit2").appendChild(zutatenliste);
         }
         let zubereitung = document.createElement("textarea");
         zubereitung.setAttribute("type", "text");
         document.getElementById("zubereitungBearbeiten").appendChild(zubereitung);
-        zubereitung.id = "zubereitung";
         zubereitung.value = rezeptArray[iNr].zubereitung;
+        zubereitung.name = "zubereitung";
         let buttonUpdate = document.createElement("button");
         buttonUpdate.innerHTML = "aktualisieren";
         document.getElementById("buttonBearbeitenContainer").appendChild(buttonUpdate);
