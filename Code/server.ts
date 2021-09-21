@@ -110,8 +110,6 @@ export namespace pruefungsabgabe {
         response.write(JSON.stringify(await rezepteDaten.find().toArray()));
         console.log("Alle Rezepte werden angezeigt");
       }
-
-    
       
       if (pathname == "/deleteMyRecipe") {
         //Hier werden alle Rezepte in der Datenbank nach Autor gefiltert. 
